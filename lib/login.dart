@@ -51,14 +51,14 @@ class _LoginState extends State<Login> {
                                   child: Column(children: [
                                     Container(
                                       width: 380,
-                                      height: 42,
+                                      height: 40,
                                       decoration: BoxDecoration(
                                           color: Colors.grey[200],
                                           borderRadius:
                                               BorderRadius.circular(50.0)),
                                       child: Padding(
-                                        padding:
-                                            const EdgeInsets.only(left: 20.0),
+                                        padding: const EdgeInsets.only(
+                                            left: 20.0, bottom: 3),
                                         child: TextField(
                                           controller: controller,
                                           decoration: InputDecoration(
@@ -69,7 +69,7 @@ class _LoginState extends State<Login> {
                                                 fontWeight: FontWeight.w400,
                                                 fontFamily: "NotoSans",
                                                 fontStyle: FontStyle.normal,
-                                                fontSize: 16.0),
+                                                fontSize: 15.0),
                                           ),
                                           keyboardType:
                                               TextInputType.emailAddress,
@@ -79,14 +79,14 @@ class _LoginState extends State<Login> {
                                     SizedBox(height: 4.0),
                                     Container(
                                       width: 380,
-                                      height: 42,
+                                      height: 40,
                                       decoration: BoxDecoration(
                                           color: Colors.grey[200],
                                           borderRadius:
                                               BorderRadius.circular(50.0)),
                                       child: Padding(
-                                        padding:
-                                            const EdgeInsets.only(left: 20.0),
+                                        padding: const EdgeInsets.only(
+                                            left: 20.0, bottom: 3),
                                         child: TextField(
                                           controller: controller2,
                                           decoration: InputDecoration(
@@ -97,10 +97,11 @@ class _LoginState extends State<Login> {
                                                 fontWeight: FontWeight.w400,
                                                 fontFamily: "NotoSans",
                                                 fontStyle: FontStyle.normal,
-                                                fontSize: 16.0),
+                                                fontSize: 15.0),
                                           ),
                                           keyboardType:
-                                              TextInputType.emailAddress,
+                                              TextInputType.visiblePassword,
+                                          obscureText: true,
                                         ),
                                       ),
                                     ),
