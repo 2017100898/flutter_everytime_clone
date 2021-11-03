@@ -77,13 +77,16 @@ class _MainPageState extends State<MainPage> {
                 icon: Icon(Icons.search),
                 color: Colors.black,
               ),
-              IconButton(
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => Profile()));
-                },
-                icon: Icon(Icons.person),
-                color: Colors.black,
+              Padding(
+                padding: const EdgeInsets.only(right: 10),
+                child: IconButton(
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => Profile()));
+                  },
+                  icon: Icon(Icons.person_outline, size: 26),
+                  color: Colors.black,
+                ),
               )
             ],
           ),
@@ -97,22 +100,10 @@ class _MainPageState extends State<MainPage> {
                     child: SingleChildScrollView(
                         scrollDirection: Axis.horizontal,
                         child: Row(children: [
-                          first_widget(
-                              Icons.lightbulb_outline_rounded,
-                              '나만의 채용 일정 관리법',
-                              '인기 공고 확인하고 일정 관리하기',
-                              ' 자세히 > ',
-                              Colors.orange,
-                              30,
-                              0),
-                          first_widget(
-                              Icons.check_box_outlined,
-                              '오늘의 할일',
-                              '9월 19일 (일)',
-                              ' 추가 + ',
-                              Colors.blueAccent,
-                              10,
-                              10),
+                          first_widget(1, '나만의 채용 일정 관리법', '인기 공고 확인하고 일정 관리하기',
+                              ' 자세히 > ', Colors.orange, 30, 0),
+                          first_widget(2, '오늘의 할일', '9월 19일 (일)', ' 추가 + ',
+                              Colors.blueAccent, 10, 10),
                         ]))),
                 SafeArea(
                     child: SingleChildScrollView(
@@ -207,7 +198,7 @@ class _MainPageState extends State<MainPage> {
                 Padding(
                   padding: const EdgeInsets.only(top: 10, bottom: 20),
                   child: Container(
-                      height: 300,
+                      height: 30,
                       width: 400,
                       alignment: Alignment.topLeft,
                       padding: EdgeInsets.all(20),
@@ -279,8 +270,8 @@ Widget circleLink(String urlLink, IconData icon, String First, String Second) {
   );
 }
 
-Widget first_widget(IconData icon, String title, String description,
-    String smallText, Color color, double x, double y) {
+Widget first_widget(var num, String title, String description, String smallText,
+    Color color, double x, double y) {
   return Padding(
     padding: const EdgeInsets.only(top: 20, bottom: 20),
     child: Container(
@@ -298,11 +289,15 @@ Widget first_widget(IconData icon, String title, String description,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Padding(
-              padding: const EdgeInsets.only(top: 8.0),
-              child: Icon(
-                icon,
-                color: Colors.black,
-              ),
+              padding: const EdgeInsets.only(top: 3.0),
+              child: Container(
+                  height: 26,
+                  width: 26,
+                  alignment: Alignment.topLeft,
+                  decoration: BoxDecoration(
+                      image: DecorationImage(
+                          image: AssetImage("assets/icon_$num.jpg"),
+                          fit: BoxFit.fill))),
             ),
             SizedBox(width: 13),
             Column(
