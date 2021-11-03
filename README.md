@@ -10,7 +10,7 @@
 * fixed Password : 1234
 
 ## Main Page
-<img width="300" src="https://user-images.githubusercontent.com/64299475/140063302-2cb97639-2627-47f5-a8df-406ac0ee5399.png"> <img width="300" src="https://user-images.githubusercontent.com/64299475/140063305-3ec6d018-ecad-4385-80c2-d6eea0452eea.png"> <img width="300" src="https://user-images.githubusercontent.com/64299475/140063276-fd338e80-0e51-4411-8694-373f9de288e6.png">
+<img width="300" src="https://user-images.githubusercontent.com/64299475/140077344-1a3729b6-83a0-4794-af9b-87e2cc69da91.png"> <img width="300" src="https://user-images.githubusercontent.com/64299475/140077325-66430f0a-ea10-4980-a4a8-a07670f349e4.png"> <img width="300" src="https://user-images.githubusercontent.com/64299475/140077812-6c1b8454-7e70-4e92-b8da-649aa4d145cc.png">
 
 ## Scheduling Page
 <img width="300" src="https://user-images.githubusercontent.com/64299475/139117807-8db1af4f-3d15-40ff-8679-0922873e1de6.png">
@@ -23,7 +23,5 @@
 
 
 ## SNS Page
-<img width="300" src="https://user-images.githubusercontent.com/64299475/139117799-53786899-a659-4f01-8042-95601d1707ef.png">
-
-
+<img width="300" src="https://user-images.githubusercontent.com/64299475/140076628-e6cf26a6-f80b-416d-9684-51a61df500f6.png"> <img width="300" src="https://user-images.githubusercontent.com/64299475/140076605-a0c0ccdb-0eb8-48e5-9c9e-ddd746b00936.png">
 
