@@ -20,6 +20,7 @@ class HomePage extends StatelessWidget {
               onTap: (index) {
                 _changeBottomNav(_, index);
               },
+              backgroundColor: Colors.white,
               currentIndex: state,
               showSelectedLabels: false,
               showUnselectedLabels: false,
@@ -28,24 +29,34 @@ class HomePage extends StatelessWidget {
               items: const <BottomNavigationBarItem>[
                 BottomNavigationBarItem(
                   icon: Icon(
-                    Icons.home,
+                    Icons.home_outlined,
+                    size: 28,
                   ),
                   label: 'Home',
                 ),
                 BottomNavigationBarItem(
-                  icon: Icon(Icons.space_dashboard),
+                  icon: Icon(
+                    Icons.space_dashboard_outlined,
+                    size: 25,
+                  ),
                   label: 'Time',
                 ),
                 BottomNavigationBarItem(
-                  icon: Icon(Icons.list),
+                  icon: Icon(
+                    Icons.list,
+                    size: 25,
+                  ),
                   label: 'List',
                 ),
                 BottomNavigationBarItem(
-                  icon: Icon(Icons.notification_important),
+                  icon: Icon(
+                    Icons.notifications_outlined,
+                    size: 25,
+                  ),
                   label: 'Alert',
                 ),
                 BottomNavigationBarItem(
-                  icon: Icon(Icons.room),
+                  icon: Icon(Icons.room_outlined, size: 25),
                   label: 'Campic',
                 ),
               ],

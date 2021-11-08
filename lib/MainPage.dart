@@ -111,23 +111,22 @@ class _MainPageState extends State<MainPage> {
                         padding: EdgeInsets.fromLTRB(30, 0, 10, 10),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
                             circleLink('http://www.khu.ac.kr',
-                                Icons.school_outlined, '학교', '홈'),
+                                Icons.school_outlined, '학교\n홈'),
                             circleLink('http://www.khu.ac.kr',
-                                Icons.school_outlined, '학교', '홈'),
+                                Icons.school_outlined, '인포21'),
                             circleLink('http://www.khu.ac.kr',
-                                Icons.school_outlined, '학교', '홈'),
+                                Icons.school_outlined, '셔틀\n버스'),
                             circleLink('http://www.khu.ac.kr',
-                                Icons.school_outlined, '학교', '홈'),
+                                Icons.school_outlined, '학사\n공지'),
                             circleLink('http://www.khu.ac.kr',
-                                Icons.school_outlined, '학교', '홈'),
+                                Icons.school_outlined, '학사\n일정'),
                             circleLink('http://www.khu.ac.kr',
-                                Icons.school_outlined, '학교', '홈'),
+                                Icons.school_outlined, '도서관'),
                             circleLink('http://www.khu.ac.kr',
-                                Icons.school_outlined, '학교', '홈'),
-                            circleLink('http://www.khu.ac.kr',
-                                Icons.school_outlined, '학교', '홈'),
+                                Icons.school_outlined, '웹메일'),
                           ],
                         ))),
                 Padding(
@@ -198,7 +197,7 @@ class _MainPageState extends State<MainPage> {
                 Padding(
                   padding: const EdgeInsets.only(top: 10, bottom: 20),
                   child: Container(
-                      height: 30,
+                      height: 330,
                       width: 400,
                       alignment: Alignment.topLeft,
                       padding: EdgeInsets.all(20),
@@ -209,7 +208,7 @@ class _MainPageState extends State<MainPage> {
                             Border.all(color: Colors.grey.shade300, width: 1),
                       ),
                       child: Column(
-                          mainAxisAlignment: MainAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             SizedBox(
@@ -241,7 +240,7 @@ void flutterToast() {
       toastLength: Toast.LENGTH_LONG);
 }
 
-Widget circleLink(String urlLink, IconData icon, String First, String Second) {
+Widget circleLink(String urlLink, IconData icon, String Title) {
   return GestureDetector(
     onTap: () {
       launch(urlLink, forceWebView: true, forceSafariVC: true);
@@ -251,9 +250,9 @@ Widget circleLink(String urlLink, IconData icon, String First, String Second) {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Container(
-          margin: EdgeInsets.fromLTRB(5, 10, 0, 10),
-          width: 50,
-          height: 50,
+          margin: EdgeInsets.fromLTRB(5, 10, 5, 10),
+          width: 53,
+          height: 53,
           decoration: BoxDecoration(
             color: Colors.grey.shade200,
             shape: BoxShape.circle,
@@ -263,8 +262,10 @@ Widget circleLink(String urlLink, IconData icon, String First, String Second) {
             color: Colors.black45,
           ),
         ),
-        Text(First),
-        Text(Second),
+        Text(
+          Title,
+          textAlign: TextAlign.center,
+        ),
       ],
     ),
   );
