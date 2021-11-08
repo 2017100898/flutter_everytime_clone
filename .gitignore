@@ -1,2 +1,10 @@
 
 .DS_Store
+ios/
+web/
+.dart_tool/
+android/
+build/
+
+.flutter-plugins
+.flutter-plugins-dependencies
