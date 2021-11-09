@@ -113,20 +113,25 @@ class _MainPageState extends State<MainPage> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
-                            circleLink('http://www.khu.ac.kr',
-                                Icons.school_outlined, '학교\n홈'),
-                            circleLink('http://www.khu.ac.kr',
-                                Icons.school_outlined, '인포21'),
-                            circleLink('http://www.khu.ac.kr',
-                                Icons.school_outlined, '셔틀\n버스'),
-                            circleLink('http://www.khu.ac.kr',
-                                Icons.school_outlined, '학사\n공지'),
-                            circleLink('http://www.khu.ac.kr',
-                                Icons.school_outlined, '학사\n일정'),
-                            circleLink('http://www.khu.ac.kr',
-                                Icons.school_outlined, '도서관'),
-                            circleLink('http://www.khu.ac.kr',
-                                Icons.school_outlined, '웹메일'),
+                            circleLink('http://www.khu.ac.kr', "home", '학교\n홈'),
+                            circleLink(
+                                'https://info21.khu.ac.kr/com/LoginCtr/login.do?sso=ok',
+                                "earth",
+                                '인포21'),
+                            circleLink(
+                                'https://khu.ac.kr/kor/sub/tab.do?MENU_SEQ=278&TAB_SEQ=282',
+                                "bus",
+                                '셔틀\n버스'),
+                            circleLink(
+                                'https://www.khu.ac.kr/kor/notice/list.do?category=UNDERGRADUATE&page=1',
+                                "notification",
+                                '학사\n공지'),
+                            circleLink('http://shaksa.khu.ac.kr/07/01.php',
+                                "schedule", '학사\n일정'),
+                            circleLink('https://library.khu.ac.kr/seoul',
+                                "book", '도서관'),
+                            circleLink(
+                                'https://mail.khu.ac.kr', "earth", '웹메일'),
                           ],
                         ))),
                 Padding(
@@ -212,13 +217,16 @@ class _MainPageState extends State<MainPage> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             SizedBox(
-                              height: 10,
+                              height: 5,
                             ),
-                            Text('실시간 인기글',
+                            Text('실시간 인기 글',
                                 style: TextStyle(
                                     color: Colors.black,
                                     fontSize: 20.0,
                                     fontWeight: FontWeight.bold)),
+                            SizedBox(
+                              height: 5,
+                            ),
                             popularPost(context, '둥지들과 함께하는 즐거운 일요일',
                                 '추천하면 이번 학기 올 A+', '자유게시판', '63', '76'),
                             popularPost(context, '후드 집업 공구할 사람?',
@@ -240,7 +248,7 @@ void flutterToast() {
       toastLength: Toast.LENGTH_LONG);
 }
 
-Widget circleLink(String urlLink, IconData icon, String Title) {
+Widget circleLink(String urlLink, String icon, String Title) {
   return GestureDetector(
     onTap: () {
       launch(urlLink, forceWebView: true, forceSafariVC: true);
@@ -249,18 +257,26 @@ Widget circleLink(String urlLink, IconData icon, String Title) {
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        Container(
-          margin: EdgeInsets.fromLTRB(5, 10, 5, 10),
-          width: 53,
-          height: 53,
-          decoration: BoxDecoration(
-            color: Colors.grey.shade200,
-            shape: BoxShape.circle,
-          ),
-          child: Icon(
-            icon,
-            color: Colors.black45,
-          ),
+        Stack(
+          children: [
+            Container(
+              margin: EdgeInsets.fromLTRB(5, 10, 5, 10),
+              width: 53,
+              height: 53,
+              decoration: BoxDecoration(
+                color: Color(0xfff9f9f9),
+                shape: BoxShape.circle,
+              ),
+            ),
+            Positioned.fill(
+                child: Align(
+                    alignment: Alignment.center,
+                    child: SizedBox(
+                      child: Image.asset("assets/$icon.jpg"),
+                      height: 23,
+                      width: 32,
+                    ))),
+          ],
         ),
         Text(
           Title,
@@ -339,17 +355,29 @@ Widget first_widget(var num, String title, String description, String smallText,
 Widget favoritePost(BuildContext context, String list, String post) {
   return TextButton(
       child: Row(
-          mainAxisAlignment: MainAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Text(
-              list,
-              style: TextStyle(color: Colors.black, fontSize: 15.0),
+            Row(
+              children: [
+                Text(
+                  list,
+                  style: TextStyle(color: Colors.black, fontSize: 15.0),
+                ),
+                SizedBox(width: 20),
+                Text(
+                  post,
+                  style: TextStyle(color: Colors.grey.shade500, fontSize: 14.0),
+                ),
+              ],
             ),
-            SizedBox(width: 20),
-            Text(
-              post,
-              style: TextStyle(color: Colors.grey.shade500, fontSize: 14.0),
+            Container(
+              height: 13,
+              width: 13,
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                    image: AssetImage("assets/new_icon.jpg"), fit: BoxFit.fill),
+              ),
             ),
           ]),
       onPressed: () {
@@ -369,10 +397,16 @@ Widget popularPost(BuildContext context, String title, String text, String list,
               height: 15,
             ),
             Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Icon(
-                  Icons.person_outline,
-                  color: Colors.black,
+                Container(
+                  height: 20,
+                  width: 20,
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                        image: AssetImage("assets/profile.jpg"),
+                        fit: BoxFit.fill),
+                  ),
                 ),
                 SizedBox(width: 10),
                 Text(
@@ -412,6 +446,9 @@ Widget popularPost(BuildContext context, String title, String text, String list,
                   color: Colors.redAccent,
                   size: 14,
                 ),
+                SizedBox(
+                  width: 5,
+                ),
                 Text(
                   num1,
                   style: TextStyle(color: Colors.redAccent, fontSize: 14.0),
@@ -424,12 +461,16 @@ Widget popularPost(BuildContext context, String title, String text, String list,
                   color: Colors.blueAccent,
                   size: 14,
                 ),
+                SizedBox(
+                  width: 5,
+                ),
                 Text(
                   num2,
                   style: TextStyle(color: Colors.blueAccent, fontSize: 14.0),
                 ),
               ])),
             ]),
+            SizedBox(height: 10),
           ]),
       onPressed: () {
         context.read<HomeCubit>().getList();
