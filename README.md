@@ -17,6 +17,11 @@
 ## Scheduling Page
 <img width="300" src="https://user-images.githubusercontent.com/64299475/140606165-bbf36c9f-ca99-419f-a8b5-460f739724b4.png">  <img width="300" src="https://user-images.githubusercontent.com/64299475/140606162-bb09db1c-8b6a-477d-b5c3-ec060d9c5922.png">
 
+## Forum Page
+<img width="300" src="https://user-images.githubusercontent.com/64299475/141292697-09702f76-09fb-4478-b962-f6065a379c73.png">
+<img width="300" src="https://user-images.githubusercontent.com/64299475/141292675-b4c86500-7fca-4149-866d-9d33b182606b.png">
+
+
 ## My Page
 <img width="300" src="https://user-images.githubusercontent.com/64299475/140606169-3e03a310-79fc-498b-827b-e944d3863fde.png"> <img width="300" src="https://user-images.githubusercontent.com/64299475/140606167-ec5ef1b3-e76d-464d-86ca-3bf5cbf3086c.png">
 
