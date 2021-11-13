@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'color.dart';
 
 class TimePage extends StatefulWidget {
   @override
@@ -27,7 +28,7 @@ class _TimePageState extends State<TimePage> {
                   Container(height: 10),
                   Text(
                     '2021년 2학기',
-                    style: TextStyle(color: Colors.redAccent, fontSize: 13),
+                    style: TextStyle(color: Palette.everyRed, fontSize: 13),
                   ),
                   Text(
                     '시간표 🍒',
@@ -206,7 +207,7 @@ class _TimePageState extends State<TimePage> {
                                       Text(
                                         "4.3",
                                         style: TextStyle(
-                                            color: Colors.redAccent,
+                                            color: Palette.everyRed,
                                             fontWeight: FontWeight.bold,
                                             fontSize: 17.0),
                                       ),

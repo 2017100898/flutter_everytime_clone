@@ -9,6 +9,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:bloc/bloc.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'dart:async';
+import 'color.dart';
 
 class MainPage extends StatefulWidget {
   @override
@@ -53,7 +54,7 @@ class _MainPageState extends State<MainPage> {
                   Container(height: 10),
                   Text(
                     '에브리타임',
-                    style: TextStyle(color: Colors.redAccent, fontSize: 13),
+                    style: TextStyle(color: Palette.everyRed, fontSize: 13),
                   ),
                   Text(
                     '경희대',
@@ -181,7 +182,7 @@ class _MainPageState extends State<MainPage> {
                                     child: TextButton(
                                       child: Text('더 보기 >',
                                           style: TextStyle(
-                                              color: Colors.redAccent,
+                                              color: Palette.everyRed,
                                               fontSize: 15.0)),
                                       onPressed: () {
                                         context.read<HomeCubit>().getList();
@@ -443,7 +444,7 @@ Widget popularPost(BuildContext context, String title, String text, String list,
                   child: Row(children: [
                 Icon(
                   Icons.thumb_up_outlined,
-                  color: Colors.redAccent,
+                  color: Palette.everyRed,
                   size: 14,
                 ),
                 SizedBox(
@@ -451,7 +452,7 @@ Widget popularPost(BuildContext context, String title, String text, String list,
                 ),
                 Text(
                   num1,
-                  style: TextStyle(color: Colors.redAccent, fontSize: 14.0),
+                  style: TextStyle(color: Palette.everyRed, fontSize: 14.0),
                 ),
                 SizedBox(
                   width: 7,
