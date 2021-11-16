@@ -8,3 +8,6 @@ build/
 
 .flutter-plugins
 .flutter-plugins-dependencies
+*.d
+.dart_tool/flutter_build/6c89a3965b01bcb1e8de889a30d901a0/.filecache
+*.dill

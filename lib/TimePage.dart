@@ -225,7 +225,7 @@ class _TimePageState extends State<TimePage> {
                                       Text(
                                         "140",
                                         style: TextStyle(
-                                            color: Colors.redAccent,
+                                            color: Palette.everyRed,
                                             fontWeight: FontWeight.bold,
                                             fontSize: 17.0),
                                       ),

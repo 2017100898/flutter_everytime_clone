@@ -4,26 +4,34 @@
 * It's a work for learning *Flutter*.
 
 ## Login
-<img width="300" src="https://user-images.githubusercontent.com/64299475/140064349-79cd8d72-26f3-43e5-a09f-9488fb5e2761.png"> <img width="300" src="https://user-images.githubusercontent.com/64299475/140984289-08156ed2-3beb-40d6-9b10-87fe1b988d9e.png"> <img width="300" src="https://user-images.githubusercontent.com/64299475/140984259-d6e4a3fb-38e9-400c-bd0b-0934e8212ed6.png">
+<img width="300" src="https://user-images.githubusercontent.com/64299475/141979865-2b2b304b-9cec-480d-b35a-e14a5f68ef12.png"> 
+<img width="300" src="https://user-images.githubusercontent.com/64299475/141979861-2a14ecf0-6f20-48f8-8636-048d3a0a5334.png">  <img width="300" src="https://user-images.githubusercontent.com/64299475/141979855-429a45c3-3fee-42f7-8c5e-ed1f54af3e94.png">
 
-* fixed ID : vaily
-* fixed Password : 1234
+
+> **Fixed Student1**  
+> ID : purin  
+> PW : 1234
+
+> **Fixed Student2**  
+> ID : ham  
+> PW : 1234
 
 ## Main Page
-<img width="300" src="https://user-images.githubusercontent.com/64299475/140984205-820e50bd-8102-4c60-9d9f-9b7478ffa70c.png"> <img width="300" src="https://user-images.githubusercontent.com/64299475/140984213-9cb09dbf-c841-43aa-89b8-9b3c76cf1255.png"> <img width="300" src="https://user-images.githubusercontent.com/64299475/140984197-4443285d-86e8-4814-9055-c7d4ac2580e1.png"> 
-
+<img width="300" src="https://user-images.githubusercontent.com/64299475/141980576-1cc782d5-a96d-402b-9fc7-dd3608d1d088.png">  <img width="300" src="https://user-images.githubusercontent.com/64299475/141980556-19d7650f-6ca9-4ae4-b2a7-ee8a477b73bd.png">  <img width="300" src="https://user-images.githubusercontent.com/64299475/141979848-ac90f01a-9ce6-4d8a-bf6f-e06dfc44de31.png">
 
 
 ## Scheduling Page
-<img width="300" src="https://user-images.githubusercontent.com/64299475/140606165-bbf36c9f-ca99-419f-a8b5-460f739724b4.png">  <img width="300" src="https://user-images.githubusercontent.com/64299475/140606162-bb09db1c-8b6a-477d-b5c3-ec060d9c5922.png">
+<img width="300" src="https://user-images.githubusercontent.com/64299475/141979839-c3c60bd9-559e-4f5f-a78b-dc932b20a54e.png">  <img width="300" src="https://user-images.githubusercontent.com/64299475/141981131-133ca79a-bc4a-469f-ba2c-af656c4402b7.png">
+
 
 ## Forum Page
-<img width="300" src="https://user-images.githubusercontent.com/64299475/141292697-09702f76-09fb-4478-b962-f6065a379c73.png">
-<img width="300" src="https://user-images.githubusercontent.com/64299475/141292675-b4c86500-7fca-4149-866d-9d33b182606b.png">
+<img width="300" src="https://user-images.githubusercontent.com/64299475/141292697-09702f76-09fb-4478-b962-f6065a379c73.png"> <img width="300" src="https://user-images.githubusercontent.com/64299475/141292675-b4c86500-7fca-4149-866d-9d33b182606b.png">
 
 
 ## My Page
-<img width="300" src="https://user-images.githubusercontent.com/64299475/140606169-3e03a310-79fc-498b-827b-e944d3863fde.png"> <img width="300" src="https://user-images.githubusercontent.com/64299475/140606167-ec5ef1b3-e76d-464d-86ca-3bf5cbf3086c.png">
+<img width="300" src="https://user-images.githubusercontent.com/64299475/141980271-fdf76fed-bdc7-440c-bcf5-2408d374e75f.png">
+ <img width="300" src="https://user-images.githubusercontent.com/64299475/140606167-ec5ef1b3-e76d-464d-86ca-3bf5cbf3086c.png">  <img width="300" src="https://user-images.githubusercontent.com/64299475/141981060-1db7b3f1-f5df-4c80-b352-75683492a7fe.png">
+
 
 
 ## Search
