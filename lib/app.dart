@@ -5,6 +5,11 @@ import 'home_page.dart';
 import 'home_cubit.dart';
 import 'login.dart';
 
+import 'User.dart';
+
+User user1 = User("ham", "1234", "김햄토리", "햄🐹", "경희대", "20");
+User user2 = User("purin", "1234", "김푸린", "푸린🤍", "경희대", "21");
+
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {

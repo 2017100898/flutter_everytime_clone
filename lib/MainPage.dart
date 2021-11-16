@@ -1,3 +1,4 @@
+import 'package:every/login.dart';
 import 'package:flutter/material.dart';
 import 'profile.dart';
 import 'search.dart';
@@ -10,6 +11,10 @@ import 'package:bloc/bloc.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'dart:async';
 import 'color.dart';
+
+import 'app.dart';
+import 'User.dart';
+import 'login.dart';
 
 class MainPage extends StatefulWidget {
   @override
@@ -57,7 +62,7 @@ class _MainPageState extends State<MainPage> {
                     style: TextStyle(color: Palette.everyRed, fontSize: 13),
                   ),
                   Text(
-                    '경희대',
+                    onUser!.school,
                     style: TextStyle(
                         color: Colors.black,
                         fontWeight: FontWeight.bold,

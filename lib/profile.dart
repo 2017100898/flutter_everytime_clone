@@ -6,6 +6,10 @@ import 'package:bloc/bloc.dart';
 import 'home_page.dart';
 import 'login.dart';
 
+import 'app.dart';
+import 'User.dart';
+import 'login.dart';
+
 class Profile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -65,18 +69,25 @@ class Profile extends StatelessWidget {
                                       crossAxisAlignment:
                                           CrossAxisAlignment.start,
                                       children: [
-                                        Text('student id',
+                                        Text(onUser!.id,
                                             style: TextStyle(
                                               color: Colors.black,
                                               fontSize: 16.0,
                                               fontWeight: FontWeight.bold,
                                             )),
-                                        Text('이름 /  닉네임',
+                                        Text(
+                                            onUser!.name +
+                                                ' / ' +
+                                                onUser!.nickname,
                                             style: TextStyle(
                                               color: Colors.grey,
                                               fontSize: 13.0,
                                             )),
-                                        Text('학교와 학번',
+                                        Text(
+                                            onUser!.school +
+                                                ' ' +
+                                                onUser!.stunum +
+                                                '학번',
                                             style: TextStyle(
                                               color: Colors.grey,
                                               fontSize: 13.0,

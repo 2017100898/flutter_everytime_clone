@@ -6,6 +6,10 @@ import 'home_cubit.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'MainPage.dart';
 import 'color.dart';
+import 'app.dart';
+import 'User.dart';
+
+User? onUser;
 
 class Login extends StatefulWidget {
   @override
@@ -122,11 +126,23 @@ class _LoginState extends State<Login> {
                                           child: ElevatedButton(
                                               onPressed: () {
                                                 if (controller.text ==
-                                                        "vaily" &&
+                                                        user1.id &&
                                                     controller2.text ==
-                                                        "1234") {
+                                                        user1.password) {
                                                   Navigator.pushNamed(
                                                       context, '/start');
+                                                  setState(() {
+                                                    onUser = User.clone(user1);
+                                                  });
+                                                } else if (controller.text ==
+                                                        user2.id &&
+                                                    controller2.text ==
+                                                        user2.password) {
+                                                  Navigator.pushNamed(
+                                                      context, '/start');
+                                                  setState(() {
+                                                    onUser = User.clone(user2);
+                                                  });
                                                 } else {
                                                   showSnackBar(context);
                                                 }
