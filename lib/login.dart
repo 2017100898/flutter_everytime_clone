@@ -22,6 +22,8 @@ class _LoginState extends State<Login> {
 
   @override
   Widget build(BuildContext context) {
+    double keyboard = MediaQuery.of(context).viewInsets.bottom;
+
     return WillPopScope(
       child: Scaffold(
           backgroundColor: Colors.white,
@@ -32,27 +34,36 @@ class _LoginState extends State<Login> {
               },
               child: SingleChildScrollView(
                 child: Padding(
-                  padding: const EdgeInsets.only(bottom: 100.0),
+                  padding: const EdgeInsets.only(top: 130, bottom: 100.0),
                   child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Container(
-                            height: 80,
-                            width: 60,
-                            decoration: BoxDecoration(
-                              image: DecorationImage(
-                                  image: AssetImage("assets/everytime.jpg"),
-                                  fit: BoxFit.fill),
-                            )),
-                        SizedBox(height: 10),
-                        Text('대학생활을 더 편하고 즐겁게',
-                            style: TextStyle(
-                                color: Colors.grey.shade500, fontSize: 17)),
-                        Text('에브리타임',
-                            style: TextStyle(
-                                color: Palette.everyRed,
-                                fontSize: 25,
-                                fontWeight: FontWeight.bold)),
+                        Visibility(
+                          visible: keyboard > 0 ? false : true,
+                          child: Column(
+                            children: [
+                              Container(
+                                  height: 80,
+                                  width: 60,
+                                  decoration: BoxDecoration(
+                                    image: DecorationImage(
+                                        image:
+                                            AssetImage("assets/everytime.jpg"),
+                                        fit: BoxFit.fill),
+                                  )),
+                              SizedBox(height: 10),
+                              Text('대학생활을 더 편하고 즐겁게',
+                                  style: TextStyle(
+                                      color: Colors.grey.shade500,
+                                      fontSize: 17)),
+                              Text('에브리타임',
+                                  style: TextStyle(
+                                      color: Palette.everyRed,
+                                      fontSize: 25,
+                                      fontWeight: FontWeight.bold)),
+                            ],
+                          ),
+                        ),
                         Form(
                             child: Theme(
                                 data: ThemeData(
@@ -152,6 +163,7 @@ class _LoginState extends State<Login> {
                                                       color: Colors.white,
                                                       fontSize: 18)),
                                               style: ElevatedButton.styleFrom(
+                                                  minimumSize: Size(335, 50),
                                                   primary: Palette.everyRed,
                                                   shape: RoundedRectangleBorder(
                                                       borderRadius:

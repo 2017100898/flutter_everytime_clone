@@ -11,10 +11,11 @@ import 'package:bloc/bloc.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'dart:async';
 import 'color.dart';
-
+import 'package:flutter/cupertino.dart';
 import 'app.dart';
 import 'User.dart';
 import 'login.dart';
+import 'freeforum.dart';
 
 class MainPage extends StatefulWidget {
   @override
@@ -387,7 +388,8 @@ Widget favoritePost(BuildContext context, String list, String post) {
             ),
           ]),
       onPressed: () {
-        context.read<HomeCubit>().getList();
+        Navigator.push(
+            context, MaterialPageRoute(builder: (context) => freeForum()));
       },
       style: TextButton.styleFrom(padding: EdgeInsets.zero));
 }
@@ -448,7 +450,7 @@ Widget popularPost(BuildContext context, String title, String text, String list,
               Container(
                   child: Row(children: [
                 Icon(
-                  Icons.thumb_up_outlined,
+                  CupertinoIcons.hand_thumbsup,
                   color: Palette.everyRed,
                   size: 14,
                 ),
@@ -463,7 +465,7 @@ Widget popularPost(BuildContext context, String title, String text, String list,
                   width: 7,
                 ),
                 Icon(
-                  Icons.message_outlined,
+                  CupertinoIcons.chat_bubble,
                   color: Colors.blueAccent,
                   size: 14,
                 ),

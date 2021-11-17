@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import './freeforum.dart';
 
 class ListPage extends StatefulWidget {
   @override
@@ -165,11 +166,12 @@ class _ListPageState extends State<ListPage> {
                                         mainAxisAlignment:
                                             MainAxisAlignment.spaceBetween,
                                         children: [
-                                          postList("내가 쓴 글", "mypost"),
-                                          postList("댓글 단 글", "comment"),
-                                          postList("스크랩", "star"),
-                                          postList("HOT 게시판", "hot"),
-                                          postList("BEST 게시판", "best"),
+                                          postList(context, "내가 쓴 글", "mypost"),
+                                          postList(
+                                              context, "댓글 단 글", "comment"),
+                                          postList(context, "스크랩", "star"),
+                                          postList(context, "HOT 게시판", "hot"),
+                                          postList(context, "BEST 게시판", "best"),
                                         ]),
                                   )),
                             ),
@@ -198,11 +200,11 @@ class _ListPageState extends State<ListPage> {
                                         mainAxisAlignment:
                                             MainAxisAlignment.spaceBetween,
                                         children: [
-                                          postList("자유게시판", "pick"),
-                                          postList("장터게시판", "pick"),
-                                          postList("정보게시판", "pick"),
-                                          postList("새내기게시판", "unpick"),
-                                          postList("시사・이슈", "unpick"),
+                                          postList(context, "자유게시판", "pick"),
+                                          postList(context, "장터게시판", "pick"),
+                                          postList(context, "정보게시판", "pick"),
+                                          postList(context, "새내기게시판", "unpick"),
+                                          postList(context, "시사・이슈", "unpick"),
                                         ]),
                                   )),
                             ),
@@ -231,10 +233,11 @@ class _ListPageState extends State<ListPage> {
                                         mainAxisAlignment:
                                             MainAxisAlignment.spaceBetween,
                                         children: [
-                                          postList("오늘의 학식", "lunch"),
-                                          postList("강의평가", "evaluation"),
-                                          postList("스터디", "study"),
-                                          postList("책방", "books"),
+                                          postList(context, "오늘의 학식", "lunch"),
+                                          postList(
+                                              context, "강의평가", "evaluation"),
+                                          postList(context, "스터디", "study"),
+                                          postList(context, "책방", "books"),
                                         ]),
                                   )),
                             ),
@@ -291,7 +294,9 @@ class _ListPageState extends State<ListPage> {
   }
 }
 
-Widget postList(String title, String icon) {
+Widget postList(BuildContext context, String title, String icon) {
+  String result = icon;
+
   return Row(
     crossAxisAlignment: CrossAxisAlignment.center,
     children: [
@@ -300,12 +305,18 @@ Widget postList(String title, String icon) {
           width: 24,
           decoration: BoxDecoration(
             image: DecorationImage(
-                image: AssetImage("assets/$icon.jpg"), fit: BoxFit.fill),
+                image: AssetImage("assets/$result.jpg"), fit: BoxFit.fill),
           )),
       SizedBox(width: 15),
-      Text(title,
-          textAlign: TextAlign.start,
-          style: TextStyle(color: Colors.black, fontSize: 15.0)),
+      GestureDetector(
+        onTap: () {
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => freeForum()));
+        },
+        child: Text(title,
+            textAlign: TextAlign.start,
+            style: TextStyle(color: Colors.black, fontSize: 15.0)),
+      ),
     ],
   );
 }

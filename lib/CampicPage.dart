@@ -140,45 +140,47 @@ class _CampicPageState extends State<CampicPage> {
                       ]),
                     ),
                     Container(
-                        alignment: Alignment.topLeft,
-                        padding: EdgeInsets.fromLTRB(20, 10, 0, 10),
-                        child: Text('지금 인기 있는 글',
-                            style: TextStyle(
-                                color: Colors.black,
-                                fontSize: 20.0,
-                                fontWeight: FontWeight.bold))),
-                    Column(
-                      children: [
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            popularAd(
-                                1, '[국립중앙도서관] 1인 미디어\n아카데미 콘텐츠 제작 지원', '공모전'),
-                            popularAd(2, '영화 <나를 잡아줘> 예매권\n이벤트 진행중', '이벤트'),
-                          ],
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            popularAd(3, '그_냥 단독 콘서트 초대\n이벤트 진행중', '이벤트'),
-                            popularAd(0, '2021 의료데이터 인공지능\n해커톤 공모전', '공모전'),
-                          ],
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            popularAd(0, '2021 의료데이터 인공지능\n해커톤 공모전', '공모전'),
-                            popularAd(0, '2021 의료데이터 인공지능\n해커톤 공모전', '공모전'),
-                          ],
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            popularAd(0, '2021 의료데이터 인공지능\n해커톤 공모전', '공모전'),
-                            popularAd(0, '2021 의료데이터 인공지능\n해커톤 공모전', '공모전'),
-                          ],
-                        ),
-                      ],
+                      width: 400,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Container(
+                              child: Text('지금 인기 있는 글',
+                                  style: TextStyle(
+                                      color: Colors.black,
+                                      fontSize: 20.0,
+                                      fontWeight: FontWeight.bold))),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              popularAd(
+                                  1, '[국립중앙도서관] 1인 미디어\n아카데미 콘텐츠 제작 지원', '공모전'),
+                              popularAd(2, '영화 <나를 잡아줘> 예매권\n이벤트 진행중', '이벤트'),
+                            ],
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              popularAd(3, '그_냥 단독 콘서트 초대\n이벤트 진행중', '이벤트'),
+                              popularAd(0, '2021 의료데이터 인공지능\n해커톤 공모전', '공모전'),
+                            ],
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              popularAd(0, '2021 의료데이터 인공지능\n해커톤 공모전', '공모전'),
+                              popularAd(0, '2021 의료데이터 인공지능\n해커톤 공모전', '공모전'),
+                            ],
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              popularAd(0, '2021 의료데이터 인공지능\n해커톤 공모전', '공모전'),
+                              popularAd(0, '2021 의료데이터 인공지능\n해커톤 공모전', '공모전'),
+                            ],
+                          ),
+                        ],
+                      ),
                     )
                   ]),
                 ))));

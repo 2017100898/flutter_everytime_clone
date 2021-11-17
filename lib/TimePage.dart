@@ -76,170 +76,180 @@ class _TimePageState extends State<TimePage> {
         body: SafeArea(
             child: SingleChildScrollView(
                 scrollDirection: Axis.vertical,
-                child: Column(children: [
-                  Container(
-                    margin: EdgeInsets.fromLTRB(15, 5, 15, 0),
-                    decoration: BoxDecoration(
-                      border: Border.all(color: Colors.grey.shade300),
-                      borderRadius: BorderRadius.circular(10.0),
-                    ),
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
+                child: Center(
+                  child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        myTable(
-                          "월",
-                          Colors.grey.shade300,
+                        Container(
+                          width: 400,
+                          margin: EdgeInsets.fromLTRB(15, 5, 15, 0),
+                          decoration: BoxDecoration(
+                            border: Border.all(color: Colors.grey.shade300),
+                            borderRadius: BorderRadius.circular(10.0),
+                          ),
+                          child: Row(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              myTable(
+                                "월",
+                                Colors.grey.shade300,
+                              ),
+                              myTable(
+                                "화",
+                                Colors.grey.shade300,
+                              ),
+                              myTable(
+                                "수",
+                                Colors.grey.shade300,
+                              ),
+                              myTable(
+                                "목",
+                                Colors.grey.shade300,
+                              ),
+                              myTable(
+                                "금",
+                                Colors.white,
+                              ),
+                            ],
+                          ),
                         ),
-                        myTable(
-                          "화",
-                          Colors.grey.shade300,
-                        ),
-                        myTable(
-                          "수",
-                          Colors.grey.shade300,
-                        ),
-                        myTable(
-                          "목",
-                          Colors.grey.shade300,
-                        ),
-                        myTable(
-                          "금",
-                          Colors.white,
-                        ),
-                      ],
-                    ),
-                  ),
-                  Container(
-                      margin: EdgeInsets.fromLTRB(15, 5, 15, 5),
-                      height: 60 + 60.0 * friends.length,
-                      width: 400,
-                      alignment: Alignment.topLeft,
-                      padding: EdgeInsets.all(20),
-                      decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(10.0),
-                          border: Border.all(
-                              color: Colors.grey.shade300, width: 1)),
-                      child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Row(children: [
-                              Text('친구 시간표',
-                                  style: TextStyle(
-                                      color: Colors.black,
-                                      fontSize: 20.0,
-                                      fontWeight: FontWeight.bold)),
-                              Container(
-                                margin: EdgeInsets.fromLTRB(210, 0, 0, 0),
-                                child: IconButton(
-                                  onPressed: () {
-                                    Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                            builder: (context) => TimePage()));
-                                  },
-                                  icon: Icon(Icons.add_box_outlined),
-                                  color: Colors.black,
-                                ),
-                              )
-                            ]),
-                            SizedBox(
-                              height: 8,
-                            ),
-                            friendName(friends[0]),
-                            friendName(friends[1]),
-                            friendName(friends[2]),
-                            friendName(friends[3]),
-                            friendName(friends[4]),
-                          ])),
-                  Container(
-                      margin: EdgeInsets.fromLTRB(15, 5, 15, 5),
-                      height: 150,
-                      width: 400,
-                      alignment: Alignment.topLeft,
-                      padding: EdgeInsets.all(20),
-                      decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(10.0),
-                          border: Border.all(
-                              color: Colors.grey.shade300, width: 1)),
-                      child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
+                        Container(
+                            margin: EdgeInsets.fromLTRB(15, 5, 15, 5),
+                            height: 60 + 60.0 * friends.length,
+                            width: 400,
+                            alignment: Alignment.topLeft,
+                            padding: EdgeInsets.all(20),
+                            decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(10.0),
+                                border: Border.all(
+                                    color: Colors.grey.shade300, width: 1)),
+                            child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Text('학점계산기',
-                                      style: TextStyle(
-                                          color: Colors.black,
-                                          fontSize: 20.0,
-                                          fontWeight: FontWeight.bold)),
-                                  Container(
-                                    child: IconButton(
-                                      onPressed: () {
-                                        Navigator.push(
-                                            context,
-                                            MaterialPageRoute(
-                                                builder: (context) =>
-                                                    TimePage()));
-                                      },
-                                      icon: Icon(Icons.edit_outlined),
-                                      color: Colors.black,
-                                    ),
-                                  )
-                                ]),
-                            TextButton(
-                                child: Row(
-                                    mainAxisAlignment: MainAxisAlignment.start,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.center,
-                                    children: [
-                                      Text(
-                                        "평균 학점  ",
+                                  Row(children: [
+                                    Text('친구 시간표',
                                         style: TextStyle(
                                             color: Colors.black,
-                                            fontSize: 17.0),
+                                            fontSize: 20.0,
+                                            fontWeight: FontWeight.bold)),
+                                    Container(
+                                      margin: EdgeInsets.fromLTRB(210, 0, 0, 0),
+                                      child: IconButton(
+                                        onPressed: () {
+                                          Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                  builder: (context) =>
+                                                      TimePage()));
+                                        },
+                                        icon: Icon(Icons.add_box_outlined),
+                                        color: Colors.black,
                                       ),
-                                      Text(
-                                        "4.3",
-                                        style: TextStyle(
-                                            color: Palette.everyRed,
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: 17.0),
-                                      ),
-                                      Text(
-                                        " / 4.3",
-                                        style: TextStyle(
-                                            color: Colors.grey, fontSize: 15.0),
-                                      ),
-                                      Text(
-                                        "     취득 학점  ",
-                                        style: TextStyle(
+                                    )
+                                  ]),
+                                  SizedBox(
+                                    height: 8,
+                                  ),
+                                  friendName(friends[0]),
+                                  friendName(friends[1]),
+                                  friendName(friends[2]),
+                                  friendName(friends[3]),
+                                  friendName(friends[4]),
+                                ])),
+                        Container(
+                            margin: EdgeInsets.fromLTRB(15, 5, 15, 5),
+                            height: 150,
+                            width: 400,
+                            alignment: Alignment.topLeft,
+                            padding: EdgeInsets.all(20),
+                            decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(10.0),
+                                border: Border.all(
+                                    color: Colors.grey.shade300, width: 1)),
+                            child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        Text('학점계산기',
+                                            style: TextStyle(
+                                                color: Colors.black,
+                                                fontSize: 20.0,
+                                                fontWeight: FontWeight.bold)),
+                                        Container(
+                                          child: IconButton(
+                                            onPressed: () {
+                                              Navigator.push(
+                                                  context,
+                                                  MaterialPageRoute(
+                                                      builder: (context) =>
+                                                          TimePage()));
+                                            },
+                                            icon: Icon(Icons.edit_outlined),
                                             color: Colors.black,
-                                            fontSize: 17.0),
-                                      ),
-                                      Text(
-                                        "140",
-                                        style: TextStyle(
-                                            color: Palette.everyRed,
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: 17.0),
-                                      ),
-                                      Text(
-                                        " / 140",
-                                        style: TextStyle(
-                                            color: Colors.grey, fontSize: 15.0),
-                                      ),
-                                    ]),
-                                onPressed: () {},
-                                style: TextButton.styleFrom(
-                                    padding: EdgeInsets.zero)),
-                          ])),
-                ]))));
+                                          ),
+                                        )
+                                      ]),
+                                  TextButton(
+                                      child: Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.start,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.center,
+                                          children: [
+                                            Text(
+                                              "평균 학점  ",
+                                              style: TextStyle(
+                                                  color: Colors.black,
+                                                  fontSize: 17.0),
+                                            ),
+                                            Text(
+                                              "4.3",
+                                              style: TextStyle(
+                                                  color: Palette.everyRed,
+                                                  fontWeight: FontWeight.bold,
+                                                  fontSize: 17.0),
+                                            ),
+                                            Text(
+                                              " / 4.3",
+                                              style: TextStyle(
+                                                  color: Colors.grey,
+                                                  fontSize: 15.0),
+                                            ),
+                                            Text(
+                                              "     취득 학점  ",
+                                              style: TextStyle(
+                                                  color: Colors.black,
+                                                  fontSize: 17.0),
+                                            ),
+                                            Text(
+                                              "140",
+                                              style: TextStyle(
+                                                  color: Palette.everyRed,
+                                                  fontWeight: FontWeight.bold,
+                                                  fontSize: 17.0),
+                                            ),
+                                            Text(
+                                              " / 140",
+                                              style: TextStyle(
+                                                  color: Colors.grey,
+                                                  fontSize: 15.0),
+                                            ),
+                                          ]),
+                                      onPressed: () {},
+                                      style: TextButton.styleFrom(
+                                          padding: EdgeInsets.zero)),
+                                ])),
+                      ]),
+                ))));
   }
 }
 
