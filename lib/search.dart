@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/widgets.dart';
+import 'freeforum.dart';
 
 class Search extends StatefulWidget {
   @override
@@ -9,6 +10,9 @@ class Search extends StatefulWidget {
 
 class _SearchState extends State<Search> {
   late TextEditingController _controller;
+
+  bool onSearch = false;
+
   @override
   void initState() {
     super.initState();
@@ -68,6 +72,9 @@ class _SearchState extends State<Search> {
                         fontSize: 18,
                       )),
                   onSubmitted: (String value) async {
+                    setState(() {
+                      onSearch = true;
+                    });
                     await showDialog<void>(
                       context: context,
                       builder: (BuildContext context) {
@@ -86,14 +93,22 @@ class _SearchState extends State<Search> {
               ),
             ]),
           ),
-          SizedBox(height: 200),
-          Icon(Icons.search_outlined, size: 90.0, color: Colors.grey.shade400),
-          Text(
-            '전체 게시판의 글을 검색해보세요',
-            style: TextStyle(
-                fontSize: 20.0,
-                color: Colors.grey[500],
-                fontWeight: FontWeight.bold),
+          Visibility(
+            visible: onSearch ? false : true,
+            child: Column(
+              children: [
+                SizedBox(height: 200),
+                Icon(Icons.search_outlined,
+                    size: 90.0, color: Colors.grey.shade400),
+                Text(
+                  '전체 게시판의 글을 검색해보세요',
+                  style: TextStyle(
+                      fontSize: 20.0,
+                      color: Colors.grey[500],
+                      fontWeight: FontWeight.bold),
+                )
+              ],
+            ),
           )
         ])));
   }
