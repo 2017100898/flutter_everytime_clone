@@ -13,32 +13,21 @@ import 'login.dart';
 import 'package:flutter/cupertino.dart';
 import 'Post.dart';
 import 'freeforum_detail.dart';
+import 'database.dart';
 
 class freeForum extends StatelessWidget {
-  Post post1 = Post(
-      "너네 베일리 알아? 그 어플 짱 좋음",
-      "나도 지인한테 들어서 우연히 알게 됨!!!! 홍보 저어어얼대 아님ㅎㅎㅋㅋㅎㅎㅎ 🐿",
-      "익명",
-      "11/17",
-      2,
-      ["뭐하는 어플이야?", "홍보검거😂", "믿고 써볼게!!!", "댓글4", "댓글5", "댓글6"]);
-  Post post2 =
-      Post("둥지들과 함께하는 즐거운 일요일", "추천하면 이번 학기 올 A+", "익명", "11/17", 63, []);
-  Post post3 = Post("오늘 학식 머양?-?", "냉면 나오면 좋겠당~", "익명", "11/17", 0,
-      ["냉면 최고 🤍", "배고파 🤤🤤🤤"]);
-
   @override
   Widget build(BuildContext context) {
-    Post post4 = Post.clone(post1);
-    Post post5 = Post.clone(post2);
-    Post post6 = Post.clone(post3);
-    Post post7 = Post.clone(post1);
-    Post post8 = Post.clone(post2);
-    Post post9 = Post.clone(post3);
+    Post post4 = Post.clone(dataBase.post1);
+    Post post5 = Post.clone(dataBase.post2);
+    Post post6 = Post.clone(dataBase.post3);
+    Post post7 = Post.clone(dataBase.post1);
+    Post post8 = Post.clone(dataBase.post2);
+    Post post9 = Post.clone(dataBase.post3);
     List<Post> postSet = [
-      post1,
-      post2,
-      post3,
+      dataBase.post1,
+      dataBase.post2,
+      dataBase.post3,
       post4,
       post5,
       post6,
