@@ -1,11 +1,10 @@
 # Flutter Everytime Clone App (version 01)
-* I only did the front work and I need DB connection and code refactoring.
-* I'm working on it and it will be updated continuously.
-* It's a work for learning *Flutter*.
+* **Flutter 학습용 클론 코딩**
+* 천천히 업데이트 될 예정이에요 🧚‍♂️🧼
 
 ## Login
-<img width="300" src="https://user-images.githubusercontent.com/64299475/142236133-e2502ebf-919c-420d-abff-78582e3688d6.png"><img width="300" src="https://user-images.githubusercontent.com/64299475/142236022-d6c7a6da-3205-4bb6-b978-b2a9046083f8.png"><img width="300" src="https://user-images.githubusercontent.com/64299475/142236001-849ab105-0707-47f3-887e-3b44ecce749b.png"><img width="300" src="https://user-images.githubusercontent.com/64299475/142236253-3a2eaae0-c223-4890-95f5-b45915a853a3.png">
-
+<img width="300" src="https://user-images.githubusercontent.com/64299475/142856567-8927ac70-d89e-424f-86b8-afe18fceb101.png"><img width="300" src="https://user-images.githubusercontent.com/64299475/142856565-b95c66f9-1d42-49f4-b31b-c4d7ea7cefb3.png">
+<img width="300" src="https://user-images.githubusercontent.com/64299475/142856564-c25fabf6-8c99-40f6-a5c6-803f4ab445a9.png"><img width="300" src="https://user-images.githubusercontent.com/64299475/142856556-11dcafdf-6bef-46a6-978d-c5887a40d603.png"> 
 
 
 
@@ -18,16 +17,18 @@
 > PW : 1234
 
 ## Main Page
+<img width="300" src="https://user-images.githubusercontent.com/64299475/142856549-0e8c2eeb-7267-4060-b87d-0b6a2ae8fdf7.png"><img width="300" src="https://user-images.githubusercontent.com/64299475/142856503-10a56e01-fca8-4f44-aff1-3811274f70a2.png"><img width="300" src="https://user-images.githubusercontent.com/64299475/142856546-40c982fc-b792-4cbf-8e60-fa46a0938d9f.png">
+
+
 <img width="300" src="https://user-images.githubusercontent.com/64299475/141980576-1cc782d5-a96d-402b-9fc7-dd3608d1d088.png"><img width="300" src="https://user-images.githubusercontent.com/64299475/141980556-19d7650f-6ca9-4ae4-b2a7-ee8a477b73bd.png"><img width="300" src="https://user-images.githubusercontent.com/64299475/142236356-e1424abf-2c83-4a61-b129-5a3454a5c50e.png">
 
 
 ## Scheduling Page
-<img width="300" src="https://user-images.githubusercontent.com/64299475/141979839-c3c60bd9-559e-4f5f-a78b-dc932b20a54e.png"><img width="300" src="https://user-images.githubusercontent.com/64299475/141981131-133ca79a-bc4a-469f-ba2c-af656c4402b7.png">
+<img width="300" src="https://user-images.githubusercontent.com/64299475/142856535-55a61071-9cc9-4063-ade5-15e436be4466.png"><img width="300" src="https://user-images.githubusercontent.com/64299475/142856534-e2b848a5-24e8-43c4-bdd3-0f487f45776c.png">
 
 
 ## Forum Page
-<img width="300" src="https://user-images.githubusercontent.com/64299475/141292697-09702f76-09fb-4478-b962-f6065a379c73.png"><img width="300" src="https://user-images.githubusercontent.com/64299475/141292675-b4c86500-7fca-4149-866d-9d33b182606b.png"><img width="300" src="https://user-images.githubusercontent.com/64299475/142235499-54405e68-ed03-4199-9b08-d3ed0d1c89c3.png"><img width="300" src="https://user-images.githubusercontent.com/64299475/142235484-49b5b6a4-97e7-471c-84b9-ad6b128d66f4.png">
-<img width="300" src="https://user-images.githubusercontent.com/64299475/142235046-be4c1aa1-0839-49a6-953d-981d51821977.png">  <img width="300" src="https://user-images.githubusercontent.com/64299475/142235026-5c89dbe1-7075-472b-9c66-0f3d6cb48a51.png">  
+<img width="300" src="https://user-images.githubusercontent.com/64299475/142856533-9409c588-5598-4d6e-bad3-cb0b05c73072.png"><img width="300" src="https://user-images.githubusercontent.com/64299475/142856532-51b33cda-e655-4e86-9e29-c2825c3f4de8.png"><img width="300" src="https://user-images.githubusercontent.com/64299475/142856529-4761b15e-f9fb-4930-8801-219acb7bd3be.png"><img width="300" src="https://user-images.githubusercontent.com/64299475/142856526-7f1fcbad-681e-4d86-94c8-ec643263c559.png"><img width="300" src="https://user-images.githubusercontent.com/64299475/142856525-63ad6cf3-0ed1-4a1f-a5e7-15946ea0c215.png"><img width="300" src="https://user-images.githubusercontent.com/64299475/142856521-51a4a3f0-d194-425c-a8f3-424bd18849b5.png"><img width="300" src="https://user-images.githubusercontent.com/64299475/142856520-1f29f79f-eba7-4edd-a537-29bf259f420d.png"><img width="300" src="https://user-images.githubusercontent.com/64299475/142856519-d680969e-8b09-4fb5-985c-d765bac98cc8.png"><img width="300" src="https://user-images.githubusercontent.com/64299475/142856517-0dd635e2-f8de-431b-b647-2d417a3ba1a3.png">
 
 
 ## My Page
@@ -37,8 +38,8 @@
 
 
 ## Search
-<img width="300" src="https://user-images.githubusercontent.com/64299475/139117819-3dc43618-544f-4d53-b6b9-e915ff754d20.png">
+<img width="300" src="https://user-images.githubusercontent.com/64299475/142856543-d99ba540-f7e6-4046-9c6c-0cfee20c428a.png">
 
 
 ## SNS Page
-<img width="300" src="https://user-images.githubusercontent.com/64299475/140984194-210eaf08-5626-4b4d-a755-723740081082.png"> <img width="300" src="https://user-images.githubusercontent.com/64299475/140984170-a0ac6027-09cd-4491-b1b0-5edba71293ba.png"> 
+<img width="300" src="https://user-images.githubusercontent.com/64299475/142856514-789d9522-69b5-4c5a-bb38-8b7a1e7da5c9.png"><img width="300" src="https://user-images.githubusercontent.com/64299475/142856508-4bb358a4-4c9b-4b57-9a96-a72de4a2707b.png">
