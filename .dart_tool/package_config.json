@@ -9,7 +9,7 @@
     },
     {
       "name": "bloc",
-      "rootUri": "file:///Users/hyenzzang/flutter/.pub-cache/hosted/pub.dartlang.org/bloc-7.1.0",
+      "rootUri": "file:///Users/hyenzzang/flutter/.pub-cache/hosted/pub.dartlang.org/bloc-7.2.1",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -45,7 +45,7 @@
     },
     {
       "name": "cupertino_icons",
-      "rootUri": "file:///Users/hyenzzang/flutter/.pub-cache/hosted/pub.dartlang.org/cupertino_icons-1.0.3",
+      "rootUri": "file:///Users/hyenzzang/flutter/.pub-cache/hosted/pub.dartlang.org/cupertino_icons-1.0.4",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -69,7 +69,7 @@
     },
     {
       "name": "flutter_bloc",
-      "rootUri": "file:///Users/hyenzzang/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_bloc-7.2.0",
+      "rootUri": "file:///Users/hyenzzang/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_bloc-7.3.3",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -123,13 +123,13 @@
     },
     {
       "name": "plugin_platform_interface",
-      "rootUri": "file:///Users/hyenzzang/flutter/.pub-cache/hosted/pub.dartlang.org/plugin_platform_interface-2.0.1",
+      "rootUri": "file:///Users/hyenzzang/flutter/.pub-cache/hosted/pub.dartlang.org/plugin_platform_interface-2.0.2",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
     {
       "name": "provider",
-      "rootUri": "file:///Users/hyenzzang/flutter/.pub-cache/hosted/pub.dartlang.org/provider-6.0.0",
+      "rootUri": "file:///Users/hyenzzang/flutter/.pub-cache/hosted/pub.dartlang.org/provider-6.0.1",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -183,9 +183,9 @@
     },
     {
       "name": "url_launcher",
-      "rootUri": "file:///Users/hyenzzang/flutter/.pub-cache/hosted/pub.dartlang.org/url_launcher-6.0.10",
+      "rootUri": "file:///Users/hyenzzang/flutter/.pub-cache/hosted/pub.dartlang.org/url_launcher-6.0.15",
       "packageUri": "lib/",
-      "languageVersion": "2.12"
+      "languageVersion": "2.14"
     },
     {
       "name": "url_launcher_linux",
@@ -230,7 +230,7 @@
       "languageVersion": "2.12"
     }
   ],
-  "generated": "2021-11-09T18:04:28.785219Z",
+  "generated": "2021-11-22T11:31:22.942177Z",
   "generator": "pub",
-  "generatorVersion": "2.15.0-178.1.beta"
+  "generatorVersion": "2.15.0-268.18.beta"
 }
