@@ -144,12 +144,15 @@ class _CampicPageState extends State<CampicPage> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Container(
-                              child: Text('지금 인기 있는 글',
-                                  style: TextStyle(
-                                      color: Colors.black,
-                                      fontSize: 20.0,
-                                      fontWeight: FontWeight.bold))),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 10),
+                            child: Container(
+                                child: Text('지금 인기 있는 글',
+                                    style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 20.0,
+                                        fontWeight: FontWeight.bold))),
+                          ),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
@@ -213,41 +216,42 @@ Widget recLink(IconData icon, String First) {
 }
 
 Widget popularAd(var adNum, String title, String subject) {
-  return Padding(
-    padding: const EdgeInsets.only(bottom: 10),
-    child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-      Container(
-        margin: EdgeInsets.fromLTRB(0, 10, 5, 10),
-        height: 120,
-        width: 190,
-        alignment: Alignment.topLeft,
-        padding: EdgeInsets.all(20),
-        decoration: BoxDecoration(
-          image: DecorationImage(
-              image: AssetImage("assets/c_ad$adNum.jpg"), fit: BoxFit.fill),
-          color: Colors.white,
-          borderRadius: BorderRadius.circular(10.0),
-          border: Border.all(color: Colors.grey.shade300, width: 1),
+  return Expanded(
+    child: Padding(
+      padding: const EdgeInsets.only(bottom: 10),
+      child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+        Container(
+          margin: EdgeInsets.fromLTRB(5, 10, 5, 10),
+          height: 120,
+          alignment: Alignment.topLeft,
+          padding: EdgeInsets.all(20),
+          decoration: BoxDecoration(
+            image: DecorationImage(
+                image: AssetImage("assets/c_ad$adNum.jpg"), fit: BoxFit.fill),
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(10.0),
+            border: Border.all(color: Colors.grey.shade300, width: 1),
+          ),
         ),
-      ),
-      Row(children: [
-        SizedBox(width: 3.0),
-        Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(title, style: TextStyle(fontSize: 16.0)),
-            SizedBox(
-              height: 3,
-            ),
-            Text(subject,
-                style: TextStyle(
-                    fontSize: 14.0,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.orangeAccent)),
-          ],
-        )
+        Row(children: [
+          SizedBox(width: 3.0),
+          Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(title, style: TextStyle(fontSize: 16.0)),
+              SizedBox(
+                height: 3,
+              ),
+              Text(subject,
+                  style: TextStyle(
+                      fontSize: 14.0,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.orangeAccent)),
+            ],
+          )
+        ]),
       ]),
-    ]),
+    ),
   );
 }

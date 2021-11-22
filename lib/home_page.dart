@@ -1,12 +1,12 @@
-import 'package:every/login.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'home_cubit.dart';
-import 'MainPage.dart';
+import 'mainpage.dart';
 import 'ListPage.dart';
-import 'AlertPage.dart';
-import 'CampicPage.dart';
-import 'TimePage.dart';
+import 'alertpage.dart';
+import 'snspage.dart';
+import 'timepage.dart';
+import 'package:flutter/cupertino.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -29,8 +29,8 @@ class HomePage extends StatelessWidget {
               items: const <BottomNavigationBarItem>[
                 BottomNavigationBarItem(
                   icon: Icon(
-                    Icons.home_outlined,
-                    size: 28,
+                    CupertinoIcons.home,
+                    size: 25,
                   ),
                   label: 'Home',
                 ),
@@ -43,20 +43,20 @@ class HomePage extends StatelessWidget {
                 ),
                 BottomNavigationBarItem(
                   icon: Icon(
-                    Icons.list,
+                    CupertinoIcons.list_bullet,
                     size: 25,
                   ),
                   label: 'List',
                 ),
                 BottomNavigationBarItem(
                   icon: Icon(
-                    Icons.notifications_outlined,
+                    CupertinoIcons.bell,
                     size: 25,
                   ),
                   label: 'Alert',
                 ),
                 BottomNavigationBarItem(
-                  icon: Icon(Icons.room_outlined, size: 25),
+                  icon: Icon(CupertinoIcons.location, size: 25),
                   label: 'Campic',
                 ),
               ],

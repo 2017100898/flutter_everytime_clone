@@ -1,13 +1,5 @@
 import 'package:flutter/material.dart';
-import 'home_cubit.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:bloc/bloc.dart';
-import 'home_page.dart';
-import 'login.dart';
 import 'color.dart';
-import 'app.dart';
-import 'User.dart';
 import 'login.dart';
 import 'package:flutter/cupertino.dart';
 import 'Post.dart';
@@ -24,6 +16,8 @@ class freeForumDetail extends StatefulWidget {
 
 class _freeForumDetailState extends State<freeForumDetail> {
   late TextEditingController _controllerB;
+  bool anonymous = true;
+  bool bell = false;
 
   @override
   void initState() {
@@ -45,6 +39,21 @@ class _freeForumDetailState extends State<freeForumDetail> {
     return Scaffold(
         backgroundColor: Colors.white,
         appBar: AppBar(
+          title: Column(
+            children: [
+              Text(
+                '자유게시판',
+                style: TextStyle(
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 12),
+              ),
+              Text(
+                onUser!.school,
+                style: TextStyle(color: Colors.grey, fontSize: 12),
+              ),
+            ],
+          ),
           backgroundColor: Colors.white,
           elevation: 0.0,
           centerTitle: true,
@@ -59,6 +68,58 @@ class _freeForumDetailState extends State<freeForumDetail> {
               ),
             ]),
           ),
+          actions: [
+            IconButton(
+              onPressed: () {
+                setState(() {
+                  bell == false ? bell = true : bell = false;
+                });
+              },
+              icon: Icon(CupertinoIcons.bell,
+                  size: 23, color: bell == false ? Colors.grey : Colors.black),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(right: 10),
+              child: IconButton(
+                onPressed: () {
+                  showCupertinoModalPopup(
+                    context: context,
+                    builder: (BuildContext context) => CupertinoActionSheet(
+                        title: const Text('글 메뉴'),
+                        actions: <Widget>[
+                          CupertinoActionSheetAction(
+                            child: const Text('쪽지 보내기'),
+                            onPressed: () {
+                              Navigator.pop(context, '쪽지 보내기');
+                            },
+                          ),
+                          CupertinoActionSheetAction(
+                            child: const Text('신고'),
+                            onPressed: () {
+                              Navigator.pop(context, '신고');
+                            },
+                          ),
+                          CupertinoActionSheetAction(
+                            child: const Text('URL 공유'),
+                            onPressed: () {
+                              Navigator.pop(context, 'URL 공유');
+                            },
+                          )
+                        ],
+                        cancelButton: CupertinoActionSheetAction(
+                          child: const Text('취소'),
+                          isDefaultAction: true,
+                          onPressed: () {
+                            Navigator.pop(context, '취소');
+                          },
+                        )),
+                  );
+                },
+                icon: Icon(CupertinoIcons.ellipsis_vertical, size: 23),
+                color: Colors.black,
+              ),
+            )
+          ],
         ),
         body: SafeArea(
           child: SingleChildScrollView(
@@ -245,13 +306,27 @@ class _freeForumDetailState extends State<freeForumDetail> {
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             SizedBox(width: 15.0),
-                            Icon(CupertinoIcons.checkmark_square_fill,
-                                color: Palette.everyRed, size: 17),
+                            GestureDetector(
+                              onTap: () {
+                                setState(() {
+                                  anonymous == true
+                                      ? anonymous = false
+                                      : anonymous = true;
+                                });
+                              },
+                              child: anonymous == true
+                                  ? Icon(CupertinoIcons.checkmark_square_fill,
+                                      color: Palette.everyRed, size: 17)
+                                  : Icon(CupertinoIcons.square,
+                                      color: Colors.grey, size: 17),
+                            ),
                             SizedBox(width: 5.0),
                             Text(
                               "익명",
                               style: TextStyle(
-                                  color: Palette.everyRed,
+                                  color: anonymous == true
+                                      ? Palette.everyRed
+                                      : Colors.grey,
                                   fontWeight: FontWeight.bold),
                             ),
                           ])),

@@ -2,20 +2,15 @@ import 'package:every/login.dart';
 import 'package:flutter/material.dart';
 import 'profile.dart';
 import 'search.dart';
-import 'ListPage.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'home_page.dart';
 import 'home_cubit.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:bloc/bloc.dart';
-import 'package:fluttertoast/fluttertoast.dart';
 import 'dart:async';
 import 'color.dart';
 import 'package:flutter/cupertino.dart';
-import 'app.dart';
-import 'User.dart';
 import 'login.dart';
 import 'freeforum.dart';
+import 'package:flutter/cupertino.dart';
 
 class MainPage extends StatefulWidget {
   @override
@@ -81,7 +76,7 @@ class _MainPageState extends State<MainPage> {
                   Navigator.push(context,
                       MaterialPageRoute(builder: (context) => Search()));
                 },
-                icon: Icon(Icons.search),
+                icon: Icon(CupertinoIcons.search, size: 23),
                 color: Colors.black,
               ),
               Padding(
@@ -91,7 +86,7 @@ class _MainPageState extends State<MainPage> {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) => Profile()));
                   },
-                  icon: Icon(Icons.person_outline, size: 26),
+                  icon: Icon(CupertinoIcons.person, size: 23),
                   color: Colors.black,
                 ),
               )
@@ -142,109 +137,115 @@ class _MainPageState extends State<MainPage> {
                           ],
                         ))),
                 Padding(
-                  padding: const EdgeInsets.only(top: 15),
-                  child: Container(
-                    height: 100,
-                    width: 400,
-                    alignment: Alignment.topLeft,
-                    padding: EdgeInsets.all(20),
-                    decoration: BoxDecoration(
-                      image: DecorationImage(
-                          image: AssetImage("assets/f_ad$_pos.jpg"),
-                          fit: BoxFit.fill),
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(10.0),
-                      border: Border.all(color: Colors.grey.shade300, width: 1),
+                  padding: const EdgeInsets.only(top: 15, left: 10, right: 10),
+                  child: Expanded(
+                    child: Container(
+                      height: 100,
+                      alignment: Alignment.topLeft,
+                      padding: EdgeInsets.all(20),
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                            image: AssetImage("assets/f_ad$_pos.jpg"),
+                            fit: BoxFit.fill),
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(10.0),
+                        border:
+                            Border.all(color: Colors.grey.shade300, width: 1),
+                      ),
                     ),
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(top: 10),
-                  child: Container(
-                      height: 300,
-                      width: 400,
-                      alignment: Alignment.topLeft,
-                      padding: EdgeInsets.all(20),
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(10.0),
-                        border:
-                            Border.all(color: Colors.grey.shade300, width: 1),
-                      ),
-                      child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Text('즐겨찾는 게시판',
-                                      style: TextStyle(
-                                          color: Colors.black,
-                                          fontSize: 20.0,
-                                          fontWeight: FontWeight.bold)),
-                                  Container(
-                                    child: TextButton(
-                                      child: Text('더 보기 >',
-                                          style: TextStyle(
-                                              color: Palette.everyRed,
-                                              fontSize: 15.0)),
-                                      onPressed: () {
-                                        context.read<HomeCubit>().getList();
-                                      },
-                                    ),
-                                  )
-                                ]),
-                            SizedBox(
-                              height: 8,
-                            ),
-                            favoritePost(
-                                context, '자유게시판', '너네 베일리 알아? 그 어플 짱 좋음'),
-                            favoritePost(context, '정보게시판', '수강신청 기간 안내'),
-                            favoritePost(context, '홍보게시판', '환경동아리 둥지둥지 부원 모집'),
-                            favoritePost(context, '장터게시판', '바지 저렴하게 팔아요'),
-                          ])),
+                  padding: const EdgeInsets.only(top: 10, left: 10, right: 10),
+                  child: Expanded(
+                    child: Container(
+                        height: 300,
+                        alignment: Alignment.topLeft,
+                        padding: EdgeInsets.all(20),
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(10.0),
+                          border:
+                              Border.all(color: Colors.grey.shade300, width: 1),
+                        ),
+                        child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Text('즐겨찾는 게시판',
+                                        style: TextStyle(
+                                            color: Colors.black,
+                                            fontSize: 20.0,
+                                            fontWeight: FontWeight.bold)),
+                                    Container(
+                                      child: TextButton(
+                                        child: Text('더 보기 >',
+                                            style: TextStyle(
+                                                color: Palette.everyRed,
+                                                fontSize: 15.0)),
+                                        onPressed: () {
+                                          context.read<HomeCubit>().getList();
+                                        },
+                                      ),
+                                    )
+                                  ]),
+                              SizedBox(
+                                height: 8,
+                              ),
+                              favoritePost(
+                                  context, '자유게시판', '너네 베일리 알아? 그 어플 짱 좋음'),
+                              favoritePost(context, '정보게시판', '수강신청 기간 안내'),
+                              favoritePost(
+                                  context, '홍보게시판', '환경동아리 둥지둥지 부원 모집'),
+                              favoritePost(context, '장터게시판', '바지 저렴하게 팔아요'),
+                            ])),
+                  ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(top: 10, bottom: 20),
-                  child: Container(
-                      height: 330,
-                      width: 400,
-                      alignment: Alignment.topLeft,
-                      padding: EdgeInsets.all(20),
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(10.0),
-                        border:
-                            Border.all(color: Colors.grey.shade300, width: 1),
-                      ),
-                      child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            SizedBox(
-                              height: 5,
-                            ),
-                            Text('실시간 인기 글',
-                                style: TextStyle(
-                                    color: Colors.black,
-                                    fontSize: 20.0,
-                                    fontWeight: FontWeight.bold)),
-                            SizedBox(
-                              height: 5,
-                            ),
-                            popularPost(context, '둥지들과 함께하는 즐거운 일요일',
-                                '추천하면 이번 학기 올 A+', '자유게시판', '63', '76'),
-                            popularPost(context, '후드 집업 공구할 사람?',
-                                '후드 집업 같이 공구할 사람 구해용~', '자유게시판', '241', '20'),
-                          ])),
+                  padding: const EdgeInsets.only(
+                      top: 10, bottom: 20, right: 10, left: 10),
+                  child: Expanded(
+                    child: Container(
+                        height: 330,
+                        alignment: Alignment.topLeft,
+                        padding: EdgeInsets.all(20),
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(10.0),
+                          border:
+                              Border.all(color: Colors.grey.shade300, width: 1),
+                        ),
+                        child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              SizedBox(
+                                height: 5,
+                              ),
+                              Text('실시간 인기 글',
+                                  style: TextStyle(
+                                      color: Colors.black,
+                                      fontSize: 20.0,
+                                      fontWeight: FontWeight.bold)),
+                              SizedBox(
+                                height: 5,
+                              ),
+                              popularPost(context, '둥지들과 함께하는 즐거운 일요일',
+                                  '추천하면 이번 학기 올 A+', '자유게시판', '63', '76'),
+                              popularPost(context, '후드 집업 공구할 사람?',
+                                  '후드 집업 같이 공구할 사람 구해용~', '자유게시판', '241', '20'),
+                            ])),
+                  ),
                 ),
               ])),
         )));
   }
 }
-
+/*
 void flutterToast() {
   Fluttertoast.showToast(
       msg: '페이지가 아직 만들어지지 않았어요.',
@@ -253,7 +254,7 @@ void flutterToast() {
       fontSize: 15.0,
       textColor: Colors.white,
       toastLength: Toast.LENGTH_LONG);
-}
+}*/
 
 Widget circleLink(String urlLink, String icon, String Title) {
   return GestureDetector(

@@ -1,8 +1,6 @@
-import 'package:easy_search/core/custom_type.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/widgets.dart';
-import 'freeforum.dart';
 import 'database.dart';
 import 'Post.dart';
 import 'color.dart';
@@ -52,7 +50,7 @@ class _SearchState extends State<Search> {
       post9
     ];
 
-    List<int> set = [];
+    List<int> set = [0, 3];
 
     return Scaffold(
         body: Center(
@@ -62,64 +60,73 @@ class _SearchState extends State<Search> {
                 children: [
           SizedBox(height: 60),
           Center(
-            child: Row(children: [
-              Container(
-                margin: EdgeInsets.fromLTRB(10, 0, 0, 0),
-                height: 40.0,
-                width: 350.0,
-                decoration: BoxDecoration(
-                  color: Colors.grey.shade200,
-                  borderRadius: BorderRadius.circular(10.0),
-                  border: Border.all(color: Colors.grey.shade200, width: 1),
-                ),
-                child: TextField(
-                  controller: _controller,
-                  cursorColor: Colors.grey,
-                  textInputAction: TextInputAction.search,
-                  decoration: InputDecoration(
-                      prefixIcon: IconButton(
-                        icon: Icon(Icons.search),
-                        onPressed: () {},
-                        iconSize: 24.0,
-                        color: Colors.grey.shade400,
+            child: Padding(
+              padding: const EdgeInsets.only(left: 10, right: 10),
+              child: Row(children: [
+                Expanded(
+                  child: Padding(
+                    padding: const EdgeInsets.only(right: 5),
+                    child: Container(
+                      height: 40.0,
+                      decoration: BoxDecoration(
+                        color: Colors.grey.shade200,
+                        borderRadius: BorderRadius.circular(10.0),
+                        border:
+                            Border.all(color: Colors.grey.shade200, width: 1),
                       ),
-                      focusedBorder: OutlineInputBorder(
-                          borderRadius:
-                              const BorderRadius.all(Radius.circular(20)),
-                          borderSide: BorderSide(
-                              color: Colors.grey.shade200, width: 2)),
-                      enabledBorder: OutlineInputBorder(
-                          borderRadius:
-                              const BorderRadius.all(Radius.circular(20)),
-                          borderSide: BorderSide(
-                              color: Colors.grey.shade200, width: 2)),
-                      contentPadding: EdgeInsets.fromLTRB(10, 10, 10, 0),
-                      hintText: '글 제목, 내용, 해시태그',
-                      hintStyle: TextStyle(
-                        fontSize: 18,
-                      )),
-                  onSubmitted: (String value) async {
-                    setState(() {
-                      onSearch = true;
-                      for (int i = 0; i < postSet.length; i++) {
-                        if (postSet[i].title.contains(value) == true ||
-                            postSet[i].contents.contains(value) == true) {
-                          set.add(i);
-                          result++;
-                        }
-                      }
-                    });
-                  },
+                      child: TextField(
+                        controller: _controller,
+                        cursorColor: Colors.grey,
+                        textInputAction: TextInputAction.search,
+                        decoration: InputDecoration(
+                            prefixIcon: IconButton(
+                              icon: Icon(Icons.search),
+                              onPressed: () {},
+                              iconSize: 24.0,
+                              color: Colors.grey.shade400,
+                            ),
+                            focusedBorder: OutlineInputBorder(
+                                borderRadius:
+                                    const BorderRadius.all(Radius.circular(20)),
+                                borderSide: BorderSide(
+                                    color: Colors.grey.shade200, width: 2)),
+                            enabledBorder: OutlineInputBorder(
+                                borderRadius:
+                                    const BorderRadius.all(Radius.circular(20)),
+                                borderSide: BorderSide(
+                                    color: Colors.grey.shade200, width: 2)),
+                            contentPadding: EdgeInsets.fromLTRB(10, 10, 10, 0),
+                            hintText: '글 제목, 내용, 해시태그',
+                            hintStyle: TextStyle(
+                              fontSize: 18,
+                            )),
+                        onSubmitted: (String value) async {
+                          setState(() {
+                            result = 0;
+
+                            for (int i = 0; i < postSet.length; i++) {
+                              if (postSet[i].title.contains(value) == true ||
+                                  postSet[i].contents.contains(value) == true) {
+                                set.add(i);
+                                result++;
+                              }
+                            }
+                            onSearch = true;
+                          });
+                        },
+                      ),
+                    ),
+                  ),
                 ),
-              ),
-              TextButton(
-                child: Text('취소',
-                    style: TextStyle(color: Colors.black54, fontSize: 18.0)),
-                onPressed: () {
-                  Navigator.pop(context);
-                },
-              ),
-            ]),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.pop(context);
+                  },
+                  child: Text('취소',
+                      style: TextStyle(color: Colors.black54, fontSize: 18.0)),
+                ),
+              ]),
+            ),
           ),
           Visibility(
             visible: onSearch ? false : true,
@@ -138,11 +145,12 @@ class _SearchState extends State<Search> {
               ],
             ),
           ),
-          for (int i = 0; i < postSet.length; i++)
-            if (set.contains(i))
-              resultVisibility(onSearch, context, postSet, i),
         ])));
   }
+}
+
+Widget info(BuildContext context, Post post) {
+  return searchBox(context, post);
 }
 
 Widget searchBox(BuildContext context, Post post) {
@@ -253,10 +261,4 @@ Widget searchBox(BuildContext context, Post post) {
           ),
         )),
   );
-}
-
-Widget resultVisibility(
-    bool onSearch, BuildContext context, List<Post> postSet, int i) {
-  return Visibility(
-      visible: onSearch ? true : false, child: searchBox(context, postSet[i]));
 }

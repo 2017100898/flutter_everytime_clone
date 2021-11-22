@@ -144,150 +144,168 @@ class _ListPageState extends State<ListPage> {
                         children: [
                           SafeArea(
                             child: Padding(
-                              padding:
-                                  const EdgeInsets.only(top: 5.0, bottom: 5.0),
-                              child: Container(
-                                  height: 300,
-                                  width: 400,
-                                  alignment: Alignment.topLeft,
-                                  padding: EdgeInsets.all(20),
-                                  decoration: BoxDecoration(
-                                    color: Colors.white,
-                                    borderRadius: BorderRadius.circular(10.0),
-                                    border: Border.all(
-                                        color: Colors.grey.shade300, width: 1),
-                                  ),
-                                  child: Padding(
-                                    padding: const EdgeInsets.only(
-                                        top: 10.0, bottom: 10.0),
-                                    child: Column(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.spaceBetween,
-                                        children: [
-                                          postList(context, "내가 쓴 글", "mypost"),
-                                          postList(
-                                              context, "댓글 단 글", "comment"),
-                                          postList(context, "스크랩", "star"),
-                                          postList(context, "HOT 게시판", "hot"),
-                                          postList(context, "BEST 게시판", "best"),
-                                        ]),
-                                  )),
+                              padding: const EdgeInsets.only(
+                                  top: 5.0, bottom: 5.0, left: 10, right: 10),
+                              child: Expanded(
+                                child: Container(
+                                    height: 300,
+                                    alignment: Alignment.topLeft,
+                                    padding: EdgeInsets.all(20),
+                                    decoration: BoxDecoration(
+                                      color: Colors.white,
+                                      borderRadius: BorderRadius.circular(10.0),
+                                      border: Border.all(
+                                          color: Colors.grey.shade300,
+                                          width: 1),
+                                    ),
+                                    child: Padding(
+                                      padding: const EdgeInsets.only(
+                                          top: 10.0, bottom: 10.0),
+                                      child: Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceBetween,
+                                          children: [
+                                            postList(
+                                                context, "내가 쓴 글", "mypost"),
+                                            postList(
+                                                context, "댓글 단 글", "comment"),
+                                            postList(context, "스크랩", "star"),
+                                            postList(context, "HOT 게시판", "hot"),
+                                            postList(
+                                                context, "BEST 게시판", "best"),
+                                          ]),
+                                    )),
+                              ),
                             ),
                           ),
                           SafeArea(
                             child: Padding(
-                              padding:
-                                  const EdgeInsets.only(top: 5.0, bottom: 5.0),
-                              child: Container(
-                                  height: 300,
-                                  width: 400,
-                                  alignment: Alignment.topLeft,
-                                  padding: EdgeInsets.all(20),
-                                  decoration: BoxDecoration(
-                                    color: Colors.white,
-                                    borderRadius: BorderRadius.circular(10.0),
-                                    border: Border.all(
-                                        color: Colors.grey.shade300, width: 1),
-                                  ),
-                                  child: Padding(
-                                    padding: const EdgeInsets.only(
-                                        top: 10.0, bottom: 10.0),
-                                    child: Column(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.spaceBetween,
-                                        children: [
-                                          postList(context, "자유게시판", "pick"),
-                                          postList(context, "장터게시판", "pick"),
-                                          postList(context, "정보게시판", "pick"),
-                                          postList(context, "새내기게시판", "unpick"),
-                                          postList(context, "시사・이슈", "unpick"),
-                                        ]),
-                                  )),
+                              padding: const EdgeInsets.only(
+                                  top: 5.0, bottom: 5.0, left: 10, right: 10),
+                              child: Expanded(
+                                child: Container(
+                                    height: 300,
+                                    width: 400,
+                                    alignment: Alignment.topLeft,
+                                    padding: EdgeInsets.all(20),
+                                    decoration: BoxDecoration(
+                                      color: Colors.white,
+                                      borderRadius: BorderRadius.circular(10.0),
+                                      border: Border.all(
+                                          color: Colors.grey.shade300,
+                                          width: 1),
+                                    ),
+                                    child: Padding(
+                                      padding: const EdgeInsets.only(
+                                          top: 10.0, bottom: 10.0),
+                                      child: Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceBetween,
+                                          children: [
+                                            postList(context, "자유게시판", "pick"),
+                                            postList(context, "장터게시판", "pick"),
+                                            postList(context, "정보게시판", "pick"),
+                                            postList(
+                                                context, "새내기게시판", "unpick"),
+                                            postList(
+                                                context, "시사・이슈", "unpick"),
+                                          ]),
+                                    )),
+                              ),
                             ),
                           ),
                           SafeArea(
                             child: Padding(
-                              padding:
-                                  const EdgeInsets.only(top: 5.0, bottom: 5.0),
-                              child: Container(
-                                  height: 230,
-                                  width: 400,
-                                  alignment: Alignment.topLeft,
-                                  padding: EdgeInsets.all(20),
-                                  decoration: BoxDecoration(
-                                    color: Colors.white,
-                                    borderRadius: BorderRadius.circular(10.0),
-                                    border: Border.all(
-                                        color: Colors.grey.shade300, width: 1),
-                                  ),
-                                  child: Padding(
-                                    padding: const EdgeInsets.only(
-                                        top: 10.0, bottom: 10.0),
-                                    child: Column(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.spaceBetween,
-                                        children: [
-                                          postList(context, "오늘의 학식", "lunch"),
-                                          postList(
-                                              context, "강의평가", "evaluation"),
-                                          postList(context, "스터디", "study"),
-                                          postList(context, "책방", "books"),
-                                        ]),
-                                  )),
+                              padding: const EdgeInsets.only(
+                                  top: 5.0, bottom: 5.0, left: 10, right: 10),
+                              child: Expanded(
+                                child: Container(
+                                    height: 230,
+                                    width: 400,
+                                    alignment: Alignment.topLeft,
+                                    padding: EdgeInsets.all(20),
+                                    decoration: BoxDecoration(
+                                      color: Colors.white,
+                                      borderRadius: BorderRadius.circular(10.0),
+                                      border: Border.all(
+                                          color: Colors.grey.shade300,
+                                          width: 1),
+                                    ),
+                                    child: Padding(
+                                      padding: const EdgeInsets.only(
+                                          top: 10.0, bottom: 10.0),
+                                      child: Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceBetween,
+                                          children: [
+                                            postList(
+                                                context, "오늘의 학식", "lunch"),
+                                            postList(
+                                                context, "강의평가", "evaluation"),
+                                            postList(context, "스터디", "study"),
+                                            postList(context, "책방", "books"),
+                                          ]),
+                                    )),
+                              ),
                             ),
                           ),
-                          Container(
-                            height: 45.0,
-                            width: 400.0,
-                            decoration: BoxDecoration(
-                              color: Colors.grey.shade200,
-                              borderRadius: BorderRadius.circular(10.0),
-                              border: Border.all(
-                                  color: Colors.grey.shade200, width: 1),
-                            ),
-                            child: TextField(
-                              controller: _controllerA,
-                              cursorColor: Colors.grey,
-                              textInputAction: TextInputAction.search,
-                              decoration: InputDecoration(
-                                  suffixIcon: IconButton(
-                                    icon: Icon(Icons.search),
-                                    onPressed: () {},
-                                    iconSize: 24.0,
-                                    color: Colors.grey.shade400,
-                                  ),
-                                  focusedBorder: OutlineInputBorder(
-                                      borderRadius: const BorderRadius.all(
-                                          Radius.circular(20)),
-                                      borderSide: BorderSide(
-                                          color: Colors.grey.shade200,
-                                          width: 2)),
-                                  enabledBorder: OutlineInputBorder(
-                                      borderRadius: const BorderRadius.all(
-                                          Radius.circular(20)),
-                                      borderSide: BorderSide(
-                                          color: Colors.grey.shade200,
-                                          width: 2)),
-                                  contentPadding:
-                                      EdgeInsets.fromLTRB(10, 10, 10, 0),
-                                  hintText: '다른 게시판을 검색해보세요',
-                                  hintStyle: TextStyle(
-                                    fontSize: 18,
-                                  )),
-                              onSubmitted: (String value) async {
-                                await showDialog<void>(
-                                  context: context,
-                                  builder: (BuildContext context) {
-                                    return AlertDialog();
+                          Center(
+                            child: Padding(
+                              padding: const EdgeInsets.only(
+                                  left: 10, right: 10, top: 5, bottom: 5),
+                              child: Container(
+                                height: 45.0,
+                                decoration: BoxDecoration(
+                                  color: Colors.grey.shade200,
+                                  borderRadius: BorderRadius.circular(10.0),
+                                  border: Border.all(
+                                      color: Colors.grey.shade200, width: 1),
+                                ),
+                                child: TextField(
+                                  controller: _controllerA,
+                                  cursorColor: Colors.grey,
+                                  textInputAction: TextInputAction.search,
+                                  decoration: InputDecoration(
+                                      suffixIcon: IconButton(
+                                        icon: Icon(Icons.search),
+                                        onPressed: () {},
+                                        iconSize: 24.0,
+                                        color: Colors.grey.shade400,
+                                      ),
+                                      focusedBorder: OutlineInputBorder(
+                                          borderRadius: const BorderRadius.all(
+                                              Radius.circular(20)),
+                                          borderSide: BorderSide(
+                                              color: Colors.grey.shade200,
+                                              width: 2)),
+                                      enabledBorder: OutlineInputBorder(
+                                          borderRadius: const BorderRadius.all(
+                                              Radius.circular(20)),
+                                          borderSide: BorderSide(
+                                              color: Colors.grey.shade200,
+                                              width: 2)),
+                                      contentPadding:
+                                          EdgeInsets.fromLTRB(10, 10, 10, 0),
+                                      hintText: '다른 게시판을 검색해보세요',
+                                      hintStyle: TextStyle(
+                                        fontSize: 18,
+                                      )),
+                                  onSubmitted: (String value) async {
+                                    await showDialog<void>(
+                                      context: context,
+                                      builder: (BuildContext context) {
+                                        return AlertDialog();
+                                      },
+                                    );
                                   },
-                                );
-                              },
+                                ),
+                              ),
                             ),
                           ),
                         ])))));

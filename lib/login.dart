@@ -1,10 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/painting.dart';
-import 'package:flutter/widgets.dart';
-import 'home_page.dart';
-import 'home_cubit.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'MainPage.dart';
 import 'color.dart';
 import 'app.dart';
 import 'User.dart';
@@ -163,15 +157,14 @@ class _LoginState extends State<Login> {
                                                       color: Colors.white,
                                                       fontSize: 18)),
                                               style: ElevatedButton.styleFrom(
-                                                  minimumSize: Size(335, 50),
-                                                  primary: Palette.everyRed,
-                                                  shape: RoundedRectangleBorder(
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              50)),
-                                                  elevation: 0.0,
-                                                  padding: EdgeInsets.fromLTRB(
-                                                      110, 10, 100, 10))))
+                                                minimumSize: Size(335, 50),
+                                                primary: Palette.everyRed,
+                                                shape: RoundedRectangleBorder(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            50)),
+                                                elevation: 0.0,
+                                              )))
                                     ])))),
                         Text('아이디/비밀번호 찾기',
                             style: TextStyle(

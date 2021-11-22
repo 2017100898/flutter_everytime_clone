@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'color.dart';
+import 'package:flutter/cupertino.dart';
 
 class TimePage extends StatefulWidget {
   @override
@@ -49,7 +50,9 @@ class _TimePageState extends State<TimePage> {
                   Navigator.push(context,
                       MaterialPageRoute(builder: (context) => TimePage()));
                 },
-                icon: Icon(Icons.add_box_outlined),
+                icon: Icon(
+                  CupertinoIcons.plus_square,
+                ),
                 color: Colors.black,
               ),
               IconButton(
@@ -57,7 +60,9 @@ class _TimePageState extends State<TimePage> {
                   Navigator.push(context,
                       MaterialPageRoute(builder: (context) => TimePage()));
                 },
-                icon: Icon(Icons.settings_outlined),
+                icon: Icon(
+                  CupertinoIcons.gear,
+                ),
                 color: Colors.black,
               ),
               Padding(
@@ -67,7 +72,9 @@ class _TimePageState extends State<TimePage> {
                       Navigator.push(context,
                           MaterialPageRoute(builder: (context) => TimePage()));
                     },
-                    icon: Icon(Icons.list),
+                    icon: Icon(
+                      CupertinoIcons.list_bullet,
+                    ),
                     color: Colors.black,
                   ))
             ],
@@ -130,27 +137,31 @@ class _TimePageState extends State<TimePage> {
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Row(children: [
-                                    Text('친구 시간표',
-                                        style: TextStyle(
+                                  Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        Text('친구 시간표',
+                                            style: TextStyle(
+                                                color: Colors.black,
+                                                fontSize: 20.0,
+                                                fontWeight: FontWeight.bold)),
+                                        Container(
+                                          child: IconButton(
+                                            onPressed: () {
+                                              Navigator.push(
+                                                  context,
+                                                  MaterialPageRoute(
+                                                      builder: (context) =>
+                                                          TimePage()));
+                                            },
+                                            icon: Icon(
+                                              CupertinoIcons.plus_square,
+                                            ),
                                             color: Colors.black,
-                                            fontSize: 20.0,
-                                            fontWeight: FontWeight.bold)),
-                                    Container(
-                                      margin: EdgeInsets.fromLTRB(210, 0, 0, 0),
-                                      child: IconButton(
-                                        onPressed: () {
-                                          Navigator.push(
-                                              context,
-                                              MaterialPageRoute(
-                                                  builder: (context) =>
-                                                      TimePage()));
-                                        },
-                                        icon: Icon(Icons.add_box_outlined),
-                                        color: Colors.black,
-                                      ),
-                                    )
-                                  ]),
+                                          ),
+                                        )
+                                      ]),
                                   SizedBox(
                                     height: 8,
                                   ),
@@ -193,7 +204,7 @@ class _TimePageState extends State<TimePage> {
                                                       builder: (context) =>
                                                           TimePage()));
                                             },
-                                            icon: Icon(Icons.edit_outlined),
+                                            icon: Icon(CupertinoIcons.pencil),
                                             color: Colors.black,
                                           ),
                                         )
@@ -225,7 +236,7 @@ class _TimePageState extends State<TimePage> {
                                                   fontSize: 15.0),
                                             ),
                                             Text(
-                                              "     취득 학점  ",
+                                              "  취득 학점  ",
                                               style: TextStyle(
                                                   color: Colors.black,
                                                   fontSize: 17.0),
