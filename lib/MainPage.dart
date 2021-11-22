@@ -39,6 +39,11 @@ class _MainPageState extends State<MainPage> {
 
   @override
   Widget build(BuildContext context) {
+    DateTime now = new DateTime.now();
+    DateTime date = new DateTime(now.year, now.month, now.day);
+    int day = date.day;
+    int month = date.month;
+
     return Scaffold(
         backgroundColor: Colors.white,
         appBar: PreferredSize(
@@ -104,7 +109,7 @@ class _MainPageState extends State<MainPage> {
                         child: Row(children: [
                           first_widget(1, '나만의 채용 일정 관리법', '인기 공고 확인하고 일정 관리하기',
                               ' 자세히 > ', Colors.orange, 30, 0),
-                          first_widget(2, '오늘의 할일', '9월 19일 (일)', ' 추가 + ',
+                          first_widget(2, '오늘의 할일', '$month월 $day일', ' 추가 + ',
                               Colors.blueAccent, 10, 10),
                         ]))),
                 SafeArea(

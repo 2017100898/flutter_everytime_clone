@@ -142,8 +142,17 @@ class _freeForumDetailState extends State<freeForumDetail> {
                               Row(children: [
                                 Padding(
                                   padding: const EdgeInsets.only(right: 15.0),
-                                  child: Image.asset('assets/profile.jpg',
-                                      height: 50, width: 50),
+                                  child: Container(
+                                    height: 45,
+                                    width: 45,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(5.0),
+                                      image: DecorationImage(
+                                          image:
+                                              AssetImage("assets/profile.jpg"),
+                                          fit: BoxFit.fill),
+                                    ),
+                                  ),
                                 ),
                                 Column(
                                     mainAxisAlignment: MainAxisAlignment.center,
@@ -168,27 +177,6 @@ class _freeForumDetailState extends State<freeForumDetail> {
                                       )
                                     ]),
                               ]),
-                              Row(
-                                children: [
-                                  GestureDetector(
-                                    child: likeWidget(
-                                        CupertinoIcons.hand_thumbsup, "공감"),
-                                    onTap: () {
-                                      setState(() {
-                                        widget.post.like++;
-                                      });
-                                    },
-                                  ),
-                                  SizedBox(width: 7),
-                                  GestureDetector(
-                                    child:
-                                        likeWidget(CupertinoIcons.star, "스크랩"),
-                                    onTap: () {
-                                      setState(() {});
-                                    },
-                                  ),
-                                ],
-                              )
                             ]),
                         SizedBox(
                           height: 15,
@@ -268,6 +256,27 @@ class _freeForumDetailState extends State<freeForumDetail> {
                             ],
                           ),
                         ),
+                        SizedBox(height: 5),
+                        Row(
+                          children: [
+                            GestureDetector(
+                              child: likeWidget(
+                                  CupertinoIcons.hand_thumbsup, "공감"),
+                              onTap: () {
+                                setState(() {
+                                  widget.post.like++;
+                                });
+                              },
+                            ),
+                            SizedBox(width: 7),
+                            GestureDetector(
+                              child: likeWidget(CupertinoIcons.star, "스크랩"),
+                              onTap: () {
+                                setState(() {});
+                              },
+                            ),
+                          ],
+                        ),
                         SizedBox(
                           height: 15,
                         ),
@@ -277,7 +286,7 @@ class _freeForumDetailState extends State<freeForumDetail> {
                           color: Colors.grey,
                         ),
                         for (int i = 0; i < widget.post.comment.length; i++)
-                          commentBox(widget.post.comment[i], i),
+                          commentBox(context, widget.post.comment[i], i),
                       ],
                     ),
                   )),
@@ -365,9 +374,8 @@ Widget likeWidget(IconData icon, String title) {
       height: 30,
       width: 70,
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: Colors.grey.shade100,
         borderRadius: BorderRadius.circular(10.0),
-        border: Border.all(color: Colors.grey.shade300, width: 1),
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -389,7 +397,7 @@ Widget likeWidget(IconData icon, String title) {
       ));
 }
 
-Widget commentBox(String comment, int num) {
+Widget commentBox(BuildContext context, String comment, int num) {
   int number = num + 1;
   return Padding(
     padding: const EdgeInsets.only(left: 6, top: 10),
@@ -406,6 +414,7 @@ Widget commentBox(String comment, int num) {
                   height: 24,
                   width: 24,
                   decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(5.0),
                     image: DecorationImage(
                         image: AssetImage("assets/profile.jpg"),
                         fit: BoxFit.fill),
@@ -424,13 +433,11 @@ Widget commentBox(String comment, int num) {
               Row(
                 children: [
                   Container(
-                      height: 30,
-                      width: 130,
+                      height: 25,
+                      width: 110,
                       decoration: BoxDecoration(
-                        color: Colors.white,
+                        color: Colors.grey.shade100,
                         borderRadius: BorderRadius.circular(5.0),
-                        border:
-                            Border.all(color: Colors.grey.shade300, width: 1),
                       ),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -455,10 +462,49 @@ Widget commentBox(String comment, int num) {
                             thickness: 0.4,
                             color: Colors.grey,
                           ),
-                          Icon(
-                            Icons.more_vert,
-                            size: 15,
-                            color: Colors.grey,
+                          GestureDetector(
+                            onTap: () {
+                              showCupertinoModalPopup(
+                                context: context,
+                                builder: (BuildContext context) =>
+                                    CupertinoActionSheet(
+                                        title: const Text('댓글 메뉴'),
+                                        actions: <Widget>[
+                                          CupertinoActionSheetAction(
+                                            child: const Text('대댓글 알림 켜기'),
+                                            onPressed: () {
+                                              Navigator.pop(
+                                                  context, '대댓글 알림 켜기');
+                                            },
+                                          ),
+                                          CupertinoActionSheetAction(
+                                            child: const Text('쪽지 보내기'),
+                                            onPressed: () {
+                                              Navigator.pop(context, '쪽지 보내기');
+                                            },
+                                          ),
+                                          CupertinoActionSheetAction(
+                                            child: const Text('신고'),
+                                            onPressed: () {
+                                              Navigator.pop(context, '신고');
+                                            },
+                                          ),
+                                        ],
+                                        cancelButton:
+                                            CupertinoActionSheetAction(
+                                          child: const Text('취소'),
+                                          isDefaultAction: true,
+                                          onPressed: () {
+                                            Navigator.pop(context, '취소');
+                                          },
+                                        )),
+                              );
+                            },
+                            child: Icon(
+                              Icons.more_vert,
+                              size: 15,
+                              color: Colors.grey,
+                            ),
                           ),
                           SizedBox(width: 3),
                         ],

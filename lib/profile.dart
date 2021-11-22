@@ -55,8 +55,18 @@ class Profile extends StatelessWidget {
                                     Padding(
                                       padding:
                                           const EdgeInsets.only(right: 15.0),
-                                      child: Image.asset('assets/profile.jpg',
-                                          height: 60, width: 60),
+                                      child: Container(
+                                        width: 60,
+                                        height: 60,
+                                        decoration: BoxDecoration(
+                                          borderRadius:
+                                              BorderRadius.circular(5.0),
+                                          image: DecorationImage(
+                                              image: AssetImage(
+                                                  "assets/profile.jpg"),
+                                              fit: BoxFit.fill),
+                                        ),
+                                      ),
                                     ),
                                     Column(
                                         mainAxisAlignment:
