@@ -19,10 +19,6 @@
 ## Main Page
 <img width="300" src="https://user-images.githubusercontent.com/64299475/142856549-0e8c2eeb-7267-4060-b87d-0b6a2ae8fdf7.png"><img width="300" src="https://user-images.githubusercontent.com/64299475/142856503-10a56e01-fca8-4f44-aff1-3811274f70a2.png"><img width="300" src="https://user-images.githubusercontent.com/64299475/142856546-40c982fc-b792-4cbf-8e60-fa46a0938d9f.png">
 
-
-<img width="300" src="https://user-images.githubusercontent.com/64299475/141980576-1cc782d5-a96d-402b-9fc7-dd3608d1d088.png"><img width="300" src="https://user-images.githubusercontent.com/64299475/141980556-19d7650f-6ca9-4ae4-b2a7-ee8a477b73bd.png"><img width="300" src="https://user-images.githubusercontent.com/64299475/142236356-e1424abf-2c83-4a61-b129-5a3454a5c50e.png">
-
-
 ## Scheduling Page
 <img width="300" src="https://user-images.githubusercontent.com/64299475/142856535-55a61071-9cc9-4063-ade5-15e436be4466.png"><img width="300" src="https://user-images.githubusercontent.com/64299475/142856534-e2b848a5-24e8-43c4-bdd3-0f487f45776c.png">
 
