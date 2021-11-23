@@ -27,7 +27,7 @@ class _ListPageState extends State<ListPage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: PreferredSize(
-          preferredSize: Size.fromHeight(70.0),
+          preferredSize: Size.fromHeight(60.0),
           child: AppBar(
             title: Padding(
               padding: const EdgeInsets.only(

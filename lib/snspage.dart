@@ -198,7 +198,7 @@ Widget recLink(IconData icon, String First) {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Container(
-          margin: EdgeInsets.fromLTRB(5, 10, 0, 10),
+          margin: EdgeInsets.fromLTRB(0, 10, 0, 10),
           width: 50,
           height: 50,
           decoration: BoxDecoration(
