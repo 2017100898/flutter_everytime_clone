@@ -246,6 +246,61 @@ class _MainPageState extends State<MainPage> {
                             ])),
                   ),
                 ),
+                Stack(children: [
+                  Padding(
+                      padding: const EdgeInsets.only(
+                          top: 10, bottom: 20, right: 10, left: 10),
+                      child: Expanded(
+                          child: Container(
+                              height: 530,
+                              alignment: Alignment.topLeft,
+                              padding: EdgeInsets.all(20),
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(10.0),
+                                border: Border.all(
+                                    color: Colors.grey.shade300, width: 1),
+                              ),
+                              child: Text('추천 정보',
+                                  style: TextStyle(
+                                      color: Colors.black,
+                                      fontSize: 20.0,
+                                      fontWeight: FontWeight.bold))))),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 60),
+                    child: SingleChildScrollView(
+                        scrollDirection: Axis.horizontal,
+                        child: Padding(
+                          padding: const EdgeInsets.only(top: 15),
+                          child: Row(children: [
+                            adContainer(
+                                context,
+                                CupertinoIcons.suit_club_fill,
+                                "아디다스 오리지널스",
+                                "나의 윈터 룩, 오직 나답게",
+                                "겨울에 대한 꽉 막힌 생각들\n이젠 벗어, 버릴 때가 됐어.",
+                                "자세히 보기",
+                                7),
+                            adContainer(
+                                context,
+                                CupertinoIcons.heart_fill,
+                                "bcc",
+                                "겨울을 뜨겁게 부스트, bcc 부스트푸퍼",
+                                "부스트 3단 기능과 함께 올 겨울을 뜨겁게 보내세요.\n",
+                                "구매하러 가기",
+                                6),
+                            adContainer(
+                                context,
+                                CupertinoIcons.phone_fill,
+                                "삼성전자",
+                                "삼성전자 공식 할인몰 갤럭시 캠퍼스 스토어",
+                                "갤럭시 캠퍼스 투어로 대학생 필수템 장만하기\n대학생 인증하면? 기본 교육할인가 10%에 추가혜택!",
+                                "가입만해도 특별혜택",
+                                5),
+                          ]),
+                        )),
+                  ),
+                ]),
               ])),
         )));
   }
@@ -490,4 +545,88 @@ Widget popularPost(BuildContext context, String title, String text, String list,
         context.read<HomeCubit>().getList();
       },
       style: TextButton.styleFrom(padding: EdgeInsets.zero));
+}
+
+Widget adContainer(
+  BuildContext context,
+  IconData icon,
+  String company,
+  String title,
+  String contents,
+  String button,
+  int imgnum,
+) {
+  return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+    Padding(
+      padding: const EdgeInsets.only(left: 30, bottom: 10),
+      child: Container(
+        width: MediaQuery.of(context).size.width - 60,
+        child:
+            Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+          Row(
+            children: [
+              Icon(icon),
+              SizedBox(
+                width: 10,
+              ),
+              Text(
+                company,
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 17),
+              ),
+            ],
+          ),
+          Container(
+            child: Text(
+              "  AD  ",
+              style: TextStyle(color: Colors.grey, fontSize: 15),
+            ),
+            decoration: BoxDecoration(
+              color: Colors.grey.shade100,
+              borderRadius: BorderRadius.circular(10.0),
+              border: Border.all(color: Colors.grey.shade100, width: 0.5),
+            ),
+          )
+        ]),
+      ),
+    ),
+    Container(
+        height: 280,
+        width: MediaQuery.of(context).size.width,
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(13.0),
+            image: DecorationImage(
+                image: AssetImage("assets/IMG_781$imgnum.jpg"),
+                fit: BoxFit.fill))),
+    Container(
+      child: Padding(
+          padding: const EdgeInsets.only(left: 30, top: 10, right: 30),
+          child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  title,
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 17),
+                ),
+                Text(
+                  contents,
+                  style: TextStyle(fontSize: 17),
+                ),
+                Container(
+                  width: MediaQuery.of(context).size.width - 60,
+                  child: ElevatedButton(
+                      onPressed: () {},
+                      child: Text(button,
+                          style:
+                              TextStyle(color: Palette.everyRed, fontSize: 14)),
+                      style: ElevatedButton.styleFrom(
+                          primary: Colors.white,
+                          shape: RoundedRectangleBorder(
+                              side: BorderSide(color: Palette.everyRed),
+                              borderRadius: BorderRadius.circular(50)),
+                          elevation: 0.0)),
+                ),
+              ])),
+    ),
+  ]);
 }
