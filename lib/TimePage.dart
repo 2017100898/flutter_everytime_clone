@@ -90,7 +90,7 @@ class _TimePageState extends State<TimePage> {
                       children: [
                         Container(
                           width: 400,
-                          margin: EdgeInsets.fromLTRB(15, 5, 15, 0),
+                          margin: EdgeInsets.fromLTRB(15, 5, 15, 5),
                           decoration: BoxDecoration(
                             border: Border.all(color: Colors.grey.shade300),
                             borderRadius: BorderRadius.circular(10.0),
@@ -99,26 +99,18 @@ class _TimePageState extends State<TimePage> {
                             crossAxisAlignment: CrossAxisAlignment.center,
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              myTable(
-                                "월",
-                                Colors.grey.shade300,
-                              ),
-                              myTable(
-                                "화",
-                                Colors.grey.shade300,
-                              ),
-                              myTable(
-                                "수",
-                                Colors.grey.shade300,
-                              ),
+                              myTable("월", Color(0xffe28b7b),
+                                  startnum: 27, endnum: 50, subject: "운영체제"),
+                              myTable("화", Color(0xff90cec1),
+                                  startnum: 42, endnum: 59, subject: "알고리즘"),
+                              myTable("수", Color(0xff90cec1),
+                                  startnum: 13, endnum: 20, subject: "알고리즘"),
                               myTable(
                                 "목",
                                 Colors.grey.shade300,
                               ),
-                              myTable(
-                                "금",
-                                Colors.white,
-                              ),
+                              myTable("금", Color(0xffffc476),
+                                  startnum: 1, endnum: 29, subject: "자료구조"),
                             ],
                           ),
                         ),
@@ -279,12 +271,13 @@ Widget friendName(String name) {
       style: TextButton.styleFrom(padding: EdgeInsets.zero));
 }
 
-Widget myTable(String week, Color col) {
+Widget myTable(String week, Color col,
+    {int startnum = 0, int endnum = 0, String subject = ""}) {
   return Expanded(
     child: Table(
       border: TableBorder(
-          horizontalInside: BorderSide(color: Colors.grey.shade300),
-          right: BorderSide(color: col)),
+          right: BorderSide(
+              color: week == "금" ? Colors.transparent : Colors.grey.shade300)),
       children: [
         TableRow(
             decoration: BoxDecoration(
@@ -298,36 +291,23 @@ Widget myTable(String week, Color col) {
                     week,
                   ))),
             ]),
-        TableRow(children: [
-          Container(
-            height: 60.0,
-          )
-        ]),
-        TableRow(children: [
-          Container(
-            height: 60.0,
-          )
-        ]),
-        TableRow(children: [
-          Container(
-            height: 60.0,
-          )
-        ]),
-        TableRow(children: [
-          Container(
-            height: 60.0,
-          )
-        ]),
-        TableRow(children: [
-          Container(
-            height: 60.0,
-          )
-        ]),
-        TableRow(children: [
-          Container(
-            height: 60.0,
-          )
-        ]),
+        for (int i = 0; i < 60; i++)
+          TableRow(children: [
+            Container(
+              decoration: BoxDecoration(
+                color: i >= startnum && i < endnum ? col : Colors.transparent,
+                border: Border(
+                  top: BorderSide(
+                      width: 0.50,
+                      color: i % 6 == 0 && !(i >= startnum && i < endnum)
+                          ? Colors.grey.shade300
+                          : Colors.transparent),
+                  bottom: BorderSide(width: 0, color: Colors.transparent),
+                ),
+              ),
+              height: 10.0,
+            ),
+          ]),
       ],
     ),
   );

@@ -32,6 +32,8 @@ class _SearchState extends State<Search> {
 
   @override
   Widget build(BuildContext context) {
+    double keyboard = MediaQuery.of(context).viewInsets.bottom;
+
     Post post4 = Post.clone(dataBase.post1);
     Post post5 = Post.clone(dataBase.post2);
     Post post6 = Post.clone(dataBase.post3);
@@ -50,7 +52,7 @@ class _SearchState extends State<Search> {
       post9
     ];
 
-    List<int> set = [0, 3];
+    List<int> set = [];
 
     return Scaffold(
         body: Center(
@@ -103,7 +105,6 @@ class _SearchState extends State<Search> {
                         onSubmitted: (String value) async {
                           setState(() {
                             result = 0;
-
                             for (int i = 0; i < postSet.length; i++) {
                               if (postSet[i].title.contains(value) == true ||
                                   postSet[i].contents.contains(value) == true) {
@@ -112,6 +113,7 @@ class _SearchState extends State<Search> {
                               }
                             }
                             onSearch = true;
+                            print(set);
                           });
                         },
                       ),
@@ -128,23 +130,38 @@ class _SearchState extends State<Search> {
               ]),
             ),
           ),
-          Visibility(
-            visible: onSearch ? false : true,
-            child: Column(
+          Stack(children: [
+            Column(
               children: [
-                SizedBox(height: 200),
-                Icon(Icons.search_outlined,
-                    size: 90.0, color: Colors.grey.shade400),
-                Text(
-                  '전체 게시판의 글을 검색해보세요',
-                  style: TextStyle(
-                      fontSize: 20.0,
-                      color: Colors.grey[500],
-                      fontWeight: FontWeight.bold),
-                )
+                for (int i = 0; i < set.length; i++)
+                  searchBox(context, postSet[set[i]]),
               ],
             ),
-          ),
+            Visibility(
+              visible: onSearch ? false : true,
+              child: Center(
+                child: Container(
+                  height: MediaQuery.of(context).size.height - 100,
+                  width: MediaQuery.of(context).size.width,
+                  color: Colors.white,
+                  child: Column(
+                    children: [
+                      SizedBox(height: 200),
+                      Icon(Icons.search_outlined,
+                          size: 90.0, color: Colors.grey.shade400),
+                      Text(
+                        '전체 게시판의 글을 검색해보세요',
+                        style: TextStyle(
+                            fontSize: 20.0,
+                            color: Colors.grey[500],
+                            fontWeight: FontWeight.bold),
+                      )
+                    ],
+                  ),
+                ),
+              ),
+            ),
+          ])
         ])));
   }
 }
