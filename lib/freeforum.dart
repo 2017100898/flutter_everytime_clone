@@ -105,15 +105,11 @@ class freeForum extends StatelessWidget {
             )
           ],
         ),
-        body: SafeArea(
-            child: SingleChildScrollView(
-                scrollDirection: Axis.vertical,
-                child: Center(
-                  child: Column(children: [
-                    for (int i = 0; i < postSet.length; i++)
-                      contextBox(context, postSet[i])
-                  ]),
-                ))));
+        body: ListView.builder(
+            itemCount: postSet.length,
+            itemBuilder: (BuildContext context, int index) {
+              return contextBox(context, postSet[index]);
+            }));
   }
 }
 

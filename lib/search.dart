@@ -52,7 +52,7 @@ class _SearchState extends State<Search> {
       post9
     ];
 
-    List<int> set = [];
+    late List<int> set = [];
 
     return Scaffold(
         body: Center(
@@ -113,7 +113,6 @@ class _SearchState extends State<Search> {
                               }
                             }
                             onSearch = true;
-                            print(set);
                           });
                         },
                       ),
