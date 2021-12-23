@@ -7,7 +7,6 @@
 <img width="300" src="https://user-images.githubusercontent.com/64299475/142856564-c25fabf6-8c99-40f6-a5c6-803f4ab445a9.png"><img width="300" src="https://user-images.githubusercontent.com/64299475/142856556-11dcafdf-6bef-46a6-978d-c5887a40d603.png"> 
 
 
-
 > **Fixed Student1**  
 > ID : purin  
 > PW : 1234
@@ -17,10 +16,10 @@
 > PW : 1234
 
 ## Main Page
-<img width="300" src="https://user-images.githubusercontent.com/64299475/142856549-0e8c2eeb-7267-4060-b87d-0b6a2ae8fdf7.png"><img width="300" src="https://user-images.githubusercontent.com/64299475/142856503-10a56e01-fca8-4f44-aff1-3811274f70a2.png"><img width="300" src="https://user-images.githubusercontent.com/64299475/142856546-40c982fc-b792-4cbf-8e60-fa46a0938d9f.png">
+<img width="300" src="https://user-images.githubusercontent.com/64299475/146553001-0ef0732d-0bed-4fb3-b2bb-45bed7017791.png"> <img width="300" src="https://user-images.githubusercontent.com/64299475/146553099-0c13fdcf-00a2-46da-a5f5-59a9e7ee3223.png"> <img width="300" src="https://user-images.githubusercontent.com/64299475/146552995-1b14c757-05f1-46dc-9387-764a5630533b.png"> <img width="300" src="https://user-images.githubusercontent.com/64299475/146552989-4427decc-ccb3-4983-b6c4-0eea45008898.png"> <img width="300" src="https://user-images.githubusercontent.com/64299475/146552976-884df106-8da1-4bde-ac31-db3271bbb319.png">
 
 ## Scheduling Page
-<img width="300" src="https://user-images.githubusercontent.com/64299475/142856535-55a61071-9cc9-4063-ade5-15e436be4466.png"><img width="300" src="https://user-images.githubusercontent.com/64299475/142856534-e2b848a5-24e8-43c4-bdd3-0f487f45776c.png">
+<img width="300" src="https://user-images.githubusercontent.com/64299475/143671544-9640d1de-b6cf-440f-896b-3fd9c8688e0c.png"> <img width="300" src="https://user-images.githubusercontent.com/64299475/142856534-e2b848a5-24e8-43c4-bdd3-0f487f45776c.png">
 
 
 ## Forum Page
